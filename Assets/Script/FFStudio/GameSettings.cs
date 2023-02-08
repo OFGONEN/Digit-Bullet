@@ -10,6 +10,9 @@ namespace FFStudio
     {
 #region Fields (Settings)
     // Info: You can use Title() attribute ONCE for every game-specific group of settings.
+    [ Title( "Trajectory" ) ]
+		[ LabelText( "Trajectory Single Line Max Length" ) ] public float trajectory_line_length;
+		[ LabelText( "Trajectory Raycast Layer" ), Layer() ] public int trajectory_layer;
     
     [ Title( "Camera" ) ]
         [ LabelText( "Follow Speed (Z)" ), SuffixLabel( "units/seconds" ), Min( 0 ) ] public float camera_follow_speed_depth = 2.8f;
