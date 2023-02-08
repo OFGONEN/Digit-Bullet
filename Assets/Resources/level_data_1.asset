@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene_index: 1
   scene_overrideAsActiveScene: 0
+  trajectory_point_count: 3
