@@ -64,6 +64,11 @@ namespace FFStudio
 			return item;
 		}
 
+		public static T GetLastItem<T>( this List<T> list )
+		{
+			return list[ list.Count - 1 ];
+		}
+
 		public static void LookAtOverTime( this Transform baseTransform, Vector3 targetPosition, float speed )
 		{
 			var directionVector = targetPosition - baseTransform.position;
