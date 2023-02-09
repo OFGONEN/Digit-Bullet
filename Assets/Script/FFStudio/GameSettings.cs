@@ -10,6 +10,8 @@ namespace FFStudio
     {
 #region Fields (Settings)
     // Info: You can use Title() attribute ONCE for every game-specific group of settings.
+    [ Title( "Actor Number" ) ]
+		[ LabelText( "Movement Speed" ) ] public float actor_movement_speed;
     [ Title( "Trajectory" ) ]
 		[ LabelText( "Trajectory Single Line Max Length" ) ] public float trajectory_line_length;
 		[ LabelText( "Trajectory Raycast Layer" ), Layer() ] public int trajectory_layer;
