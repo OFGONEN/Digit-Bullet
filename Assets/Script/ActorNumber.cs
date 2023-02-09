@@ -12,7 +12,8 @@ public class ActorNumber : MonoBehaviour
   [ Title( "Setup" ) ]
     [ SerializeField ] float number_value;
 
-    float number_value_current;
+	Vector3 movement_direction;
+	float number_value_current;
 #endregion
 
 #region Properties
@@ -30,6 +31,11 @@ public class ActorNumber : MonoBehaviour
 	public void OnTargetNumberTrigger()
 	{
 		gameObject.SetActive( false );
+	}
+
+	public void DoRicochet( Vector3 normal )
+	{
+		movement_direction = Vector3.Reflect( movement_direction, normal );
 	}
 #endregion
 
