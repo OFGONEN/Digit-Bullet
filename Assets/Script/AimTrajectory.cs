@@ -22,10 +22,12 @@ public class AimTrajectory : MonoBehaviour
 	[ ShowInInspector, ReadOnly ] List< Vector3 > point_list;
 	[ ShowInInspector, ReadOnly ] int point_count;
 
-    UnityMessage onUpdate;
+	Vector3 finger_position;
+	UnityMessage onUpdate;
 #endregion
 
 #region Properties
+	public Vector3 AimDirection => ( finger_position - position ).normalized ;
 #endregion
 
 #region Unity API
@@ -73,11 +75,11 @@ public class AimTrajectory : MonoBehaviour
 		point_list.Clear();
 		point_list.Add( position );
 
-		var fingerPosition = _camera.ScreenToWorldPoint( shared_finger_position.sharedValue
+		finger_position = _camera.ScreenToWorldPoint( shared_finger_position.sharedValue
 			.ConvertToVector3_Z( Mathf.Abs( _camera.transform.position.z ) ) );
 
 		var castOrigin    = position;
-		var castDirection = ( fingerPosition - castOrigin ).normalized;
+		var castDirection = ( finger_position - castOrigin ).normalized;
 
 		RaycastHit hit;
 		bool isHit;
