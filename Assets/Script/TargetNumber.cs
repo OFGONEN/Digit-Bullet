@@ -16,7 +16,7 @@ public class TargetNumber : MonoBehaviour
     [ SerializeField ] GameEvent event_target_number_appear;
     [ SerializeField ] GameEvent event_target_number_disappear;
 
-    float target_number_current;
+    int target_number_current;
 #endregion
 
 #region Properties
