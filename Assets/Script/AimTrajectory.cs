@@ -33,7 +33,7 @@ public class AimTrajectory : MonoBehaviour
     {
 		EmptyDelegates();
 
-		point_count                 = CurrentLevelData.Instance.levelData.trajectory_point_count + 2;  // Start and End points
+		point_count                 = CurrentLevelData.Instance.levelData.trajectory_point_count + 1;  // Start and End points
 		position                    = transform.position;
 		layerMask                   = 1 << GameSettings.Instance.trajectory_layer;
 		point_list                  = new List< Vector3 >( point_count );
@@ -43,7 +43,7 @@ public class AimTrajectory : MonoBehaviour
     private void Start()
     {
         _camera = ( notif_camera_reference.sharedValue as Transform ).GetComponent< Camera >();
-    }
+	}
 
     private void Update()
     {
