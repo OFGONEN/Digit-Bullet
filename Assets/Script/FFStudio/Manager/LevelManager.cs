@@ -2,6 +2,7 @@
 
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Sirenix.OdinInspector;
 
 namespace FFStudio
 {
@@ -14,6 +15,9 @@ namespace FFStudio
 
         [ Header( "Level Releated" ) ]
         public SharedProgressNotifier notifier_progress;
+
+// Private
+        [ ShowInInspector, ReadOnly ] int target_number_count;
 #endregion
 
 #region UnityAPI
@@ -34,7 +38,6 @@ namespace FFStudio
         // Info: Called from Editor.
         public void LevelRevealedResponse()
         {
-
         }
 
         // Info: Called from Editor.
@@ -42,6 +45,22 @@ namespace FFStudio
         {
 
         }
+
+        public void OnTargetNumberAppear()
+        {
+			target_number_count++;
+		}
+
+		public void OnTargetNumberDisappear()
+		{
+			target_number_count--;
+
+            if( target_number_count == 0)
+            {
+				levelCompleted.Raise();
+				target_number_count = 0;
+			}
+		}
 #endregion
 
 #region Implementation
