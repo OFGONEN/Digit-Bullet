@@ -13,8 +13,8 @@ public class TargetNumber : MonoBehaviour
     [ SerializeField ] float target_number;
 
   [ Title( "Shared" ) ]
-    // [ SerializeField ] GameEvent event_target_number_enable;
-    // [ SerializeField ] GameEvent event_target_number_disable;
+    [ SerializeField ] GameEvent event_target_number_appear;
+    [ SerializeField ] GameEvent event_target_number_disappear;
 
     float target_number_current;
 #endregion
@@ -25,12 +25,12 @@ public class TargetNumber : MonoBehaviour
 #region Unity API
     void OnEnable()
     {
-		// event_target_number_enable.Raise();
+		event_target_number_appear.Raise();
 	}
 
     void OnDisable()
     {
-		// event_target_number_disable.Raise();
+		event_target_number_disappear.Raise();
     }
 #endregion
 

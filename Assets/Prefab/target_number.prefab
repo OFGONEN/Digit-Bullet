@@ -205,3 +205,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target_number: 10
+  event_target_number_appear: {fileID: 11400000, guid: 0cf126b754cafc448bc95328725be813, type: 2}
+  event_target_number_disappear: {fileID: 11400000, guid: cfb90616259327f48a52df09501da4df, type: 2}
