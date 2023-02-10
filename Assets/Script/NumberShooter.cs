@@ -19,6 +19,7 @@ public class NumberShooter : MonoBehaviour
 	int number_spawn_index = 0;
 
 	Vector3 position;
+	List< ActorNumber > number_list;
 
     UnityMessage onFingerDown;
     UnityMessage onFingerUp;
@@ -31,14 +32,13 @@ public class NumberShooter : MonoBehaviour
     private void Awake()
     {
 		EmptyDelegates();
-
 		position = transform.position;
 	}
 
     private void Start()
     {
-		number_current = pool_number_actor.GetEntity();
-		number_current.Spawn( position, 1, CurrentLevelData.Instance.levelData.number_array[ number_spawn_index ] );
+		number_list = new List< ActorNumber >( CurrentLevelData.Instance.levelData.number_array_size );
+		SpawnNumbers();
 	}
 #endregion
 
@@ -60,6 +60,27 @@ public class NumberShooter : MonoBehaviour
 #endregion
 
 #region Implementation
+	void SpawnNumbers()
+	{
+		number_current = pool_number_actor.GetEntity();
+		number_current.Spawn( position,
+			CurrentLevelData.Instance.levelData.number_scale,
+			CurrentLevelData.Instance.levelData.number_array[ number_spawn_index ] );
+
+		number_spawn_index++;
+
+		for( var i = number_spawn_index; i <= CurrentLevelData.Instance.levelData.number_array_size; i++ )
+		{
+			var number = pool_number_actor.GetEntity();
+
+			number.Spawn( position + CurrentLevelData.Instance.levelData.number_array_spawn_offset + CurrentLevelData.Instance.levelData.number_array_offset * ( i - 1 ),
+			CurrentLevelData.Instance.levelData.number_array_scale,
+			CurrentLevelData.Instance.levelData.number_array[ number_spawn_index ] );
+
+			number_list.Add( number );
+		}
+	}
+
     void StartAim()
     {
 		_aimTrajectory.StartAim();
