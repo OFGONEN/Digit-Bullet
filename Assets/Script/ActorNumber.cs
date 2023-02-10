@@ -6,7 +6,7 @@ using UnityEngine;
 using FFStudio;
 using Sirenix.OdinInspector;
 
-public class ActorNumber : MonoBehaviour
+public class ActorNumber : MonoBehaviour, ISafetyCollectable
 {
 #region Fields
   [ Title( "Setup" ) ]
@@ -53,9 +53,9 @@ public class ActorNumber : MonoBehaviour
 		onFixedUpdate = OnMovement;
 	}
 
-	public void DoRicochet( Vector3 normal )
+	public void OnSafetyNetTrigger() 
 	{
-		movement_direction = Vector3.Reflect( movement_direction, normal );
+		gameObject.SetActive( false );
 	}
 #endregion
 
