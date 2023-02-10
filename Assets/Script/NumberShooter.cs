@@ -91,10 +91,18 @@ public class NumberShooter : MonoBehaviour
 
     void StopAim()
     {
-		number_current.StartMovement( _aimTrajectory.AimDirection );
 		_aimTrajectory.StopAim();
-
 		EmptyDelegates();
+
+		ShootCurrentNumber();
+	}
+
+	void ShootCurrentNumber()
+	{
+		number_current.StartMovement( _aimTrajectory.AimDirection );
+		//todo make the next actor number jump into this
+		//todo spawn actor number to back of the line
+		//todo ready to shoot after jump sequence ends
 	}
 
     void EmptyDelegates()
