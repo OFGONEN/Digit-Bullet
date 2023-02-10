@@ -19,6 +19,6 @@ namespace FFStudio
 
 	public interface ICustomNormal
 	{
-		Vector3 GetNormal();
+		Vector3 GetNormal( Vector3 contactPoint );
 	}
 }

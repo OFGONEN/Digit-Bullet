@@ -33,7 +33,7 @@ public class AimTrajectory : MonoBehaviour
     {
 		EmptyDelegates();
 
-		point_count                 = CurrentLevelData.Instance.levelData.trajectory_point_count + 2;  // Start and End points
+		point_count                 = CurrentLevelData.Instance.levelData.trajectory_point_count + 1;  // Start and End points
 		position                    = transform.position;
 		layerMask                   = 1 << GameSettings.Instance.trajectory_layer;
 		point_list                  = new List< Vector3 >( point_count );
@@ -43,7 +43,7 @@ public class AimTrajectory : MonoBehaviour
     private void Start()
     {
         _camera = ( notif_camera_reference.sharedValue as Transform ).GetComponent< Camera >();
-    }
+	}
 
     private void Update()
     {
@@ -77,7 +77,7 @@ public class AimTrajectory : MonoBehaviour
 			.ConvertToVector3_Z( Mathf.Abs( _camera.transform.position.z ) ) );
 
 		var castOrigin    = position;
-		var castDirection = fingerPosition - castOrigin;
+		var castDirection = ( fingerPosition - castOrigin ).normalized;
 
 		RaycastHit hit;
 		bool isHit;
@@ -89,12 +89,13 @@ public class AimTrajectory : MonoBehaviour
 
 		while( isHit && hitCount < CurrentLevelData.Instance.levelData.trajectory_point_count )
 		{
-			point_list.Add( hit.point );
+			var hitPoint = hit.point;
+			point_list.Add( hitPoint );
 
 			hitCount++;
-			castOrigin = hit.point;
+			castOrigin = hitPoint;
 
-			var normal       = hit.collider.GetComponent< ICustomNormal >().GetNormal();
+			var normal       = hit.collider.GetComponent< ICustomNormal >().GetNormal( hitPoint );
 			    castDirection = Vector3.Reflect( castDirection, normal );
 
 			isHit = Physics.Raycast( castOrigin, castDirection, out hit,
