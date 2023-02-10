@@ -10,7 +10,7 @@ public class TargetNumber : MonoBehaviour
 {
 #region Fields
   [ Title( "Setup" ) ]
-    [ SerializeField ] float target_number;
+    [ SerializeField ] int target_number;
 
   [ Title( "Shared" ) ]
     [ SerializeField ] GameEvent event_target_number_appear;
