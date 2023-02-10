@@ -94,7 +94,7 @@ public class AimTrajectory : MonoBehaviour
 			hitCount++;
 			castOrigin = hit.point;
 
-			var normal       = hit.collider.GetComponent< ICustomNormal >().GetNormal();
+			var normal       = hit.collider.GetComponent< ICustomNormal >().GetNormal( hit.point );
 			    castDirection = Vector3.Reflect( castDirection, normal );
 
 			isHit = Physics.Raycast( castOrigin, castDirection, out hit,
