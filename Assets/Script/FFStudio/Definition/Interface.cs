@@ -21,4 +21,9 @@ namespace FFStudio
 	{
 		Vector3 GetNormal( Vector3 contactPoint );
 	}
+
+	public interface ISafetyCollectable
+	{
+		void OnSafetyNetTrigger();
+	}
 }
