@@ -77,7 +77,7 @@ public class AimTrajectory : MonoBehaviour
 			.ConvertToVector3_Z( Mathf.Abs( _camera.transform.position.z ) ) );
 
 		var castOrigin    = position;
-		var castDirection = fingerPosition - castOrigin;
+		var castDirection = ( fingerPosition - castOrigin ).normalized;
 
 		RaycastHit hit;
 		bool isHit;
@@ -89,12 +89,13 @@ public class AimTrajectory : MonoBehaviour
 
 		while( isHit && hitCount < CurrentLevelData.Instance.levelData.trajectory_point_count )
 		{
-			point_list.Add( hit.point );
+			var hitPoint = hit.point;
+			point_list.Add( hitPoint );
 
 			hitCount++;
-			castOrigin = hit.point;
+			castOrigin = hitPoint;
 
-			var normal       = hit.collider.GetComponent< ICustomNormal >().GetNormal( hit.point );
+			var normal       = hit.collider.GetComponent< ICustomNormal >().GetNormal( hitPoint );
 			    castDirection = Vector3.Reflect( castDirection, normal );
 
 			isHit = Physics.Raycast( castOrigin, castDirection, out hit,
