@@ -15,7 +15,7 @@ MonoBehaviour:
   actor_movement_speed: 3
   actor_movement_delta_max: 100
   trajectory_line_length: 10
-  trajectory_layer: 0
+  trajectory_layer: 29
   camera_follow_speed_depth: 2.8
   maxLevelCount: 1
   useRemoteConfig_GameSettings: 0
