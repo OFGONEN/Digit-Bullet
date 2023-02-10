@@ -76,10 +76,9 @@ MonoBehaviour:
   unityEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 466540527978792586}
-        m_TargetAssemblyTypeName: FFStudio.ColliderListener`2[[FFStudio.TriggerMessage,
-          Assembly-CSharp
-        m_MethodName: SetAttachedComponent
+      - m_Target: {fileID: 6733948214434724813}
+        m_TargetAssemblyTypeName: SafetyNet, Assembly-CSharp
+        m_MethodName: OnTrigger
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

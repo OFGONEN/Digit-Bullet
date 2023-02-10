@@ -19,7 +19,7 @@ public class SafetyNet : MonoBehaviour
 #region API
     public void OnTrigger( Collider collider )
     {
-		( collider.GetComponent<ComponentHost>().HostComponent as ISafetyCollectable ).OnSafetyNetTrigger();
+		( collider.GetComponent< ComponentHost >().HostComponent as ISafetyCollectable ).OnSafetyNetTrigger();
 	}
 #endregion
 
