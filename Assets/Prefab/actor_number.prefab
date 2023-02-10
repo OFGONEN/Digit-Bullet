@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c637aa83785df4823956030d6c1f9340, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number_value: 5
+  pool_number_actor: {fileID: 11400000, guid: 47c5f73274ce26347b24ff0112afc815, type: 2}
   _rigidbody: {fileID: 4295857064801465328}
 --- !u!54 &4295857064801465328
 Rigidbody:

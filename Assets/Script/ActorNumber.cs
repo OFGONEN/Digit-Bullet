@@ -10,8 +10,8 @@ using Sirenix.OdinInspector;
 public class ActorNumber : MonoBehaviour, ISafetyCollectable
 {
 #region Fields
-  [ Title( "Setup" ) ]
-    [ SerializeField ] float number_value;
+  [ Title( "Shared" ) ]
+	[ SerializeField ] PoolActorNumber pool_number_actor;
 
   [ Title( "Components" ) ]
 	[ SerializeField ] Rigidbody _rigidbody;
@@ -19,14 +19,14 @@ public class ActorNumber : MonoBehaviour, ISafetyCollectable
 	Vector3 movement_target_direction;
 	Vector3 movement_target_position;
 	ICustomNormal movement_target;
-	float number_value_current;
+	int number_value;
 	int layerMask;
 
 	UnityMessage onFixedUpdate;
 #endregion
 
 #region Properties
-    public float NumberValue => number_value_current;
+    public int NumberValue => number_value;
 #endregion
 
 #region Unity API
@@ -37,8 +37,7 @@ public class ActorNumber : MonoBehaviour, ISafetyCollectable
 
     void Awake()
     {
-		number_value_current = number_value;
-		layerMask            = 1 << GameSettings.Instance.trajectory_layer;
+		layerMask = 1 << GameSettings.Instance.trajectory_layer;
 
 		EmptyDelegates();
 	}
@@ -50,22 +49,26 @@ public class ActorNumber : MonoBehaviour, ISafetyCollectable
 #endregion
 
 #region API
-	public void OnTargetNumberTrigger()
+	public void Spawn( Vector3 position, float size, int value )
 	{
-		gameObject.SetActive( false );
+		gameObject.SetActive( true );
+		number_value = value;
 	}
 
-	[ Button() ]
 	public void StartMovement( Vector3 direction )
 	{
 		movement_target_direction = direction;
-
 		FindMovementTargetPosition();
+	}
+
+	public void OnTargetNumberTrigger()
+	{
+		pool_number_actor.ReturnEntity( this );
 	}
 
 	public void OnSafetyNetTrigger() 
 	{
-		gameObject.SetActive( false );
+		pool_number_actor.ReturnEntity( this );
 	}
 #endregion
 
