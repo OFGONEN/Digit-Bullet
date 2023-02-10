@@ -52,6 +52,10 @@ public class ActorNumber : MonoBehaviour, ISafetyCollectable
 	public void Spawn( Vector3 position, float size, int value )
 	{
 		gameObject.SetActive( true );
+
+		transform.position   = position;
+		transform.localScale = Vector3.one * size;
+
 		number_value = value;
 	}
 
