@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a385bd3b4416492409284c9a366cb52a, type: 3}
   m_Name: game_settings
   m_EditorClassIdentifier: 
-  actor_movement_speed: 1
+  actor_movement_speed: 3
+  actor_movement_delta_max: 100
   trajectory_line_length: 10
   trajectory_layer: 0
   camera_follow_speed_depth: 2.8

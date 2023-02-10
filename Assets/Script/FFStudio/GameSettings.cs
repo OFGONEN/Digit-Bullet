@@ -12,6 +12,8 @@ namespace FFStudio
     // Info: You can use Title() attribute ONCE for every game-specific group of settings.
     [ Title( "Actor Number" ) ]
 		[ LabelText( "Movement Speed" ) ] public float actor_movement_speed;
+		[ LabelText( "Movement Max Delta" ) ] public float actor_movement_delta_max;
+
     [ Title( "Trajectory" ) ]
 		[ LabelText( "Trajectory Single Line Max Length" ) ] public float trajectory_line_length;
 		[ LabelText( "Trajectory Raycast Layer" ), Layer() ] public int trajectory_layer;
