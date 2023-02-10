@@ -17,6 +17,9 @@ namespace FFStudio
 
 	  [ Title( "Level Releated" ) ]
 	  	[ LabelText( "Aim Trajectory Contact Point Count" ) ] public int trajectory_point_count;
+	  	[ LabelText( "Number Shoot Array" ) ] public int[] number_array;
+	  	[ LabelText( "Number Shoot Array Offset" ) ] public Vector3 number_array_offset;
+	  	[ LabelText( "Number Shoot Array Count" ) ] public int number_array_count;
 
 #if UNITY_EDITOR
 		static IEnumerable SceneList()

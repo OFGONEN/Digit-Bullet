@@ -15,3 +15,6 @@ MonoBehaviour:
   scene_index: 1
   scene_overrideAsActiveScene: 0
   trajectory_point_count: 3
+  number_array: 14000000
+  number_array_offset: {x: 0, y: 0, z: 0}
+  number_array_count: 0
