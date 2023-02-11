@@ -14,6 +14,15 @@ namespace FFStudio
 		[ LabelText( "Movement Speed" ) ] public float actor_movement_speed;
 		[ LabelText( "Movement Max Delta" ) ] public float actor_movement_delta_max;
 
+    [ Title( "Actor Number Jump" ) ]
+		[ LabelText( "Jump Big Power" ) ] public float actor_jump_big_power;
+		[ LabelText( "Jump Big Duration" ) ] public float actor_jump_big_duration;
+		[ LabelText( "Jump Big Ease" ) ] public Ease actor_jump_big_ease;
+		[ LabelText( "Jump Small Power" ) ] public float actor_jump_small_power;
+		[ LabelText( "Jump Small Duration" ) ] public float actor_jump_small_duration;
+		[ LabelText( "Jump Small Ease" ) ] public Ease actor_jump_small_ease;
+
+
     [ Title( "Trajectory" ) ]
 		[ LabelText( "Trajectory Single Line Max Length" ) ] public float trajectory_line_length;
 		[ LabelText( "Trajectory Raycast Layer" ), Layer() ] public int trajectory_layer;
