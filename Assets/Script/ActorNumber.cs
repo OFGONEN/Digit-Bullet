@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using FFStudio;
+using DG.Tweening;
 using Sirenix.OdinInspector;
 
 public class ActorNumber : MonoBehaviour, ISafetyCollectable
@@ -22,6 +23,8 @@ public class ActorNumber : MonoBehaviour, ISafetyCollectable
 	int number_value;
 	int layerMask;
 
+	RecycledTween recycledTween = new RecycledTween();
+
 	UnityMessage onFixedUpdate;
 #endregion
 
@@ -33,6 +36,7 @@ public class ActorNumber : MonoBehaviour, ISafetyCollectable
 	private void OnDisable()
 	{
 		EmptyDelegates();
+		recycledTween.Kill();
 	}
 
     void Awake()
@@ -73,6 +77,30 @@ public class ActorNumber : MonoBehaviour, ISafetyCollectable
 	public void OnSafetyNetTrigger() 
 	{
 		pool_number_actor.ReturnEntity( this );
+	}
+
+	public void JumpBig( Vector3 position, UnityMessage onComplete )
+	{
+		recycledTween.Recycle( transform.DOJump(
+			position,
+			GameSettings.Instance.actor_jump_big_power,
+			1,
+			GameSettings.Instance.actor_jump_big_duration )
+			.SetEase( GameSettings.Instance.actor_jump_big_ease ),
+			onComplete
+		);
+	}
+
+	public void JumpSmall( Vector3 position, UnityMessage onComplete )
+	{
+		recycledTween.Recycle( transform.DOJump(
+			position,
+			GameSettings.Instance.actor_jump_small_power,
+			1,
+			GameSettings.Instance.actor_jump_small_duration )
+			.SetEase( GameSettings.Instance.actor_jump_small_ease ),
+			onComplete
+		);
 	}
 #endregion
 
