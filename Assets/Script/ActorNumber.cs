@@ -8,7 +8,7 @@ using FFStudio;
 using DG.Tweening;
 using Sirenix.OdinInspector;
 
-public class ActorNumber : MonoBehaviour, ISafetyCollectable, IActorNumber
+public class ActorNumber : MonoBehaviour, IActorNumber
 {
 #region Fields
   [ Title( "Shared" ) ]
@@ -53,6 +53,7 @@ public class ActorNumber : MonoBehaviour, ISafetyCollectable, IActorNumber
 #endregion
 
 #region API
+// IActorNumber start
 	public void Add( int value )
 	{
 		number_value += value;
@@ -73,6 +74,17 @@ public class ActorNumber : MonoBehaviour, ISafetyCollectable, IActorNumber
 		number_value /= value;
 	}
 
+	public void OnTargetNumberTrigger()
+	{
+		pool_number_actor.ReturnEntity( this );
+	}
+
+	public void OnSafetyNetTrigger() 
+	{
+		pool_number_actor.ReturnEntity( this );
+	}
+// IActorNumber end
+
 	public void Spawn( Vector3 position, float size, int value )
 	{
 		gameObject.SetActive( true );
@@ -87,16 +99,6 @@ public class ActorNumber : MonoBehaviour, ISafetyCollectable, IActorNumber
 	{
 		movement_target_direction = direction;
 		FindMovementTargetPosition();
-	}
-
-	public void OnTargetNumberTrigger()
-	{
-		pool_number_actor.ReturnEntity( this );
-	}
-
-	public void OnSafetyNetTrigger() 
-	{
-		pool_number_actor.ReturnEntity( this );
 	}
 
 	public void JumpBig( Vector3 position, UnityMessage onComplete )

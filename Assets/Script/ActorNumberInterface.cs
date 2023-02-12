@@ -6,7 +6,7 @@ using UnityEngine;
 using FFStudio;
 
 [ CreateAssetMenu( fileName = "number_actor_interface", menuName = "FF/Game/Actor Number Interface" ) ]
-public class ActorNumberInterface : ScriptableObject
+public class ActorNumberInterface : ScriptableObject, IActorNumber
 {
 #region Fields
     ActorNumber number_current;
@@ -42,6 +42,11 @@ public class ActorNumberInterface : ScriptableObject
 	public void Divide( int value )
 	{
 		number_current.Divide( value );
+	}
+
+	public void OnSafetyNetTrigger()
+	{
+		number_current.OnSafetyNetTrigger();
 	}
 #endregion
 

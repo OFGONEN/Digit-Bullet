@@ -22,16 +22,12 @@ namespace FFStudio
 		Vector3 GetNormal( Vector3 contactPoint );
 	}
 
-	public interface ISafetyCollectable
-	{
-		void OnSafetyNetTrigger();
-	}
-
 	public interface IActorNumber
 	{
 		void Add( int value );
 		void Substract( int value );
 		void Multiply( int value );
 		void Divide( int value );
+		void OnSafetyNetTrigger();
 	}
 }
