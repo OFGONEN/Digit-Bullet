@@ -9,11 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7153325991329336787}
-  - component: {fileID: 6733948214434724813}
   - component: {fileID: 9091515401422566631}
   - component: {fileID: 466540527978792586}
   m_Layer: 30
-  m_Name: net
+  m_Name: net_safety
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,18 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6733948214434724813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7948952425449802435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08c791e1db50d6045a5fcb40667c8529, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &9091515401422566631
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -76,10 +63,22 @@ MonoBehaviour:
   unityEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6733948214434724813}
-        m_TargetAssemblyTypeName: SafetyNet, Assembly-CSharp
-        m_MethodName: OnTrigger
+      - m_Target: {fileID: 11400000, guid: 686a2439c7a264467915f45c12cfb31d, type: 2}
+        m_TargetAssemblyTypeName: ActorNumberInterface, Assembly-CSharp
+        m_MethodName: CacheNumber
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 686a2439c7a264467915f45c12cfb31d, type: 2}
+        m_TargetAssemblyTypeName: ActorNumberInterface, Assembly-CSharp
+        m_MethodName: OnSafetyNetTrigger
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
