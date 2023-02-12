@@ -69,13 +69,15 @@ public class NumberShooter : MonoBehaviour
 
 		number_spawn_index++;
 
-		for( var i = number_spawn_index; i <= CurrentLevelData.Instance.levelData.number_array_size; i++ )
+		for( var i = 0; i <= CurrentLevelData.Instance.levelData.number_array_size; i++ )
 		{
 			var number = pool_number_actor.GetEntity();
 
-			number.Spawn( position + CurrentLevelData.Instance.levelData.number_array_spawn_offset + CurrentLevelData.Instance.levelData.number_array_offset * ( i - 1 ),
+			number.Spawn( position + CurrentLevelData.Instance.levelData.number_array_spawn_offset + CurrentLevelData.Instance.levelData.number_array_offset * i,
 			CurrentLevelData.Instance.levelData.number_array_scale,
 			CurrentLevelData.Instance.levelData.number_array[ number_spawn_index ] );
+
+			number_spawn_index++;
 
 			number_list.Add( number );
 		}
@@ -100,9 +102,37 @@ public class NumberShooter : MonoBehaviour
 	void ShootCurrentNumber()
 	{
 		number_current.StartMovement( _aimTrajectory.AimDirection );
-		//todo make the next actor number jump into this
-		//todo spawn actor number to back of the line
-		//todo ready to shoot after jump sequence ends
+
+		if( number_list.Count > 0 )
+		{
+			for( var i = number_list.Count - 1; i > 0; i-- )
+				number_list[ i ].JumpSmall( number_list[ i - 1 ].transform.position );
+
+			number_list[ 0 ].JumpBig( position, OnJumpBigComplete );
+		}
+		else
+		{
+			FFLogger.Log( "Level Failed ??", this );
+		}
+	}
+
+	void OnJumpBigComplete()
+	{
+		onFingerDown = StartAim;
+
+		number_current = number_list[ 0 ];
+		number_list.RemoveAt( 0 );
+
+		if( number_spawn_index < CurrentLevelData.Instance.levelData.number_array.Length )
+		{
+			number_spawn_index++;
+			var number = pool_number_actor.GetEntity();
+			number_list.Add( number );
+
+			number.Spawn( position + CurrentLevelData.Instance.levelData.number_array_spawn_offset + CurrentLevelData.Instance.levelData.number_array_offset * ( number_list.Count - 1 ),
+				CurrentLevelData.Instance.levelData.number_array_scale,
+				CurrentLevelData.Instance.levelData.number_array[ number_spawn_index ] );
+		}
 	}
 
     void EmptyDelegates()
