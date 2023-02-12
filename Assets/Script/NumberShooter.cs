@@ -65,11 +65,11 @@ public class NumberShooter : MonoBehaviour
 		number_current = pool_number_actor.GetEntity();
 		number_current.Spawn( position,
 			CurrentLevelData.Instance.levelData.number_scale,
-			CurrentLevelData.Instance.levelData.number_array[ number_spawn_index ] );
+			CurrentLevelData.Instance.levelData.number_array[ 0 ] );
 
-		number_spawn_index++;
+		number_spawn_index = 1;
 
-		for( var i = 0; i <= CurrentLevelData.Instance.levelData.number_array_size; i++ )
+		for( var i = 0; i < CurrentLevelData.Instance.levelData.number_array_size; i++ )
 		{
 			var number = pool_number_actor.GetEntity();
 
@@ -125,13 +125,14 @@ public class NumberShooter : MonoBehaviour
 
 		if( number_spawn_index < CurrentLevelData.Instance.levelData.number_array.Length )
 		{
-			number_spawn_index++;
 			var number = pool_number_actor.GetEntity();
 			number_list.Add( number );
 
 			number.Spawn( position + CurrentLevelData.Instance.levelData.number_array_spawn_offset + CurrentLevelData.Instance.levelData.number_array_offset * ( number_list.Count - 1 ),
 				CurrentLevelData.Instance.levelData.number_array_scale,
 				CurrentLevelData.Instance.levelData.number_array[ number_spawn_index ] );
+
+			number_spawn_index++;
 		}
 	}
 

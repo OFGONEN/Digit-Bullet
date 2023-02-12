@@ -17,12 +17,12 @@ namespace FFStudio
 
 	  [ Title( "Level Releated" ) ]
 	  	[ LabelText( "Aim Trajectory Contact Point Count" ) ] public int trajectory_point_count;
-	  	[ LabelText( "Number Shoot Array" ) ] public int[] number_array;
-	  	[ LabelText( "Number Shoot Array Spawn Offset" ) ] public Vector3 number_array_spawn_offset;
-	  	[ LabelText( "Number Shoot Array Offset" ) ] public Vector3 number_array_offset;
-	  	[ LabelText( "Number Shoot Array Size" ) ] public int number_array_size;
+	  	[ LabelText( "Numbers To Shoot" ) ] public int[] number_array;
+	  	[ LabelText( "First Number's Spawn Offset" ) ] public Vector3 number_array_spawn_offset;
+	  	[ LabelText( "Number's offset in between" ) ] public Vector3 number_array_offset;
+	  	[ LabelText( "Number's Waiting Line Size" ) ] public int number_array_size;
 	  	[ LabelText( "Number Shoot Scale" ) ] public float number_scale; // Current Number to shoot
-	  	[ LabelText( "Number Shoot Array Scale" ) ] public float number_array_scale; // Number waiting to be shot
+	  	[ LabelText( "Number Shoot Waiting Line Scale" ) ] public float number_array_scale; // Number waiting to be shot
 
 #if UNITY_EDITOR
 		static IEnumerable SceneList()
