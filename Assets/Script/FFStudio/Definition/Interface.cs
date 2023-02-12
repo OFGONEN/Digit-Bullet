@@ -26,4 +26,12 @@ namespace FFStudio
 	{
 		void OnSafetyNetTrigger();
 	}
+
+	public interface IActorNumber
+	{
+		void Add( int value );
+		void Substract( int value );
+		void Multiply( int value );
+		void Divide( int value );
+	}
 }
