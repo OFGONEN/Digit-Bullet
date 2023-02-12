@@ -20,7 +20,7 @@ public class ActorNumber : MonoBehaviour, ISafetyCollectable
 	Vector3 movement_target_direction;
 	Vector3 movement_target_position;
 	ICustomNormal movement_target;
-	int number_value;
+	[ ShowInInspector, ReadOnly ] int number_value;
 	int layerMask;
 
 	RecycledTween recycledTween = new RecycledTween();
@@ -87,24 +87,29 @@ public class ActorNumber : MonoBehaviour, ISafetyCollectable
 			1,
 			GameSettings.Instance.actor_jump_big_duration )
 			.SetEase( GameSettings.Instance.actor_jump_big_ease ),
-			onComplete
+			() => { onComplete(); OnJumpBigComplete(); }
 		);
 	}
 
-	public void JumpSmall( Vector3 position, UnityMessage onComplete )
+	public void JumpSmall( Vector3 position )
 	{
 		recycledTween.Recycle( transform.DOJump(
 			position,
 			GameSettings.Instance.actor_jump_small_power,
 			1,
 			GameSettings.Instance.actor_jump_small_duration )
-			.SetEase( GameSettings.Instance.actor_jump_small_ease ),
-			onComplete
+			.SetEase( GameSettings.Instance.actor_jump_small_ease )
 		);
 	}
 #endregion
 
 #region Implementation
+	void OnJumpBigComplete()
+	{
+		transform.localScale = Vector3.one;
+		//todo punch scale
+	}
+
 	void OnMovementFree()
 	{
 		var position     = _rigidbody.position;
