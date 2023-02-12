@@ -8,7 +8,7 @@ using FFStudio;
 using DG.Tweening;
 using Sirenix.OdinInspector;
 
-public class ActorNumber : MonoBehaviour, ISafetyCollectable
+public class ActorNumber : MonoBehaviour, ISafetyCollectable, IActorNumber
 {
 #region Fields
   [ Title( "Shared" ) ]
@@ -53,6 +53,26 @@ public class ActorNumber : MonoBehaviour, ISafetyCollectable
 #endregion
 
 #region API
+	public void Add( int value )
+	{
+		number_value += value;
+	}
+
+	public void Substract( int value )
+	{
+		number_value -= value;
+	}
+
+	public void Multiply( int value )
+	{
+		number_value *= value;
+	}
+
+	public void Divide( int value )
+	{
+		number_value /= value;
+	}
+
 	public void Spawn( Vector3 position, float size, int value )
 	{
 		gameObject.SetActive( true );
