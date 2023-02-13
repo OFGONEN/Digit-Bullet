@@ -113,10 +113,6 @@ public class NumberShooter : MonoBehaviour
 
 			number_list[ 0 ].JumpBig( position, OnJumpBigComplete );
 		}
-		else
-		{
-			FFLogger.Log( "Level Failed ??", this );
-		}
 	}
 
 	void OnJumpBigComplete()

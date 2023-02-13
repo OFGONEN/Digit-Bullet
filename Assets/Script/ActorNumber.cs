@@ -20,6 +20,8 @@ public class ActorNumber : MonoBehaviour, IActorNumber
 	Vector3 movement_target_direction;
 	Vector3 movement_target_position;
 	ICustomNormal movement_target;
+	int movement_ricochet_count;
+
 	[ ShowInInspector, ReadOnly ] int number_value;
 	int layerMask;
 
@@ -98,6 +100,8 @@ public class ActorNumber : MonoBehaviour, IActorNumber
 	public void StartMovement( Vector3 direction )
 	{
 		movement_target_direction = direction;
+		movement_ricochet_count   = 1;
+
 		FindMovementTargetPosition();
 	}
 
@@ -153,7 +157,17 @@ public class ActorNumber : MonoBehaviour, IActorNumber
 				movement_target_direction, 
 				movement_target.GetNormal( movement_target_position ) );
 
-			FindMovementTargetPosition();
+			if( movement_ricochet_count < CurrentLevelData.Instance.levelData.number_ricochet_count )
+			{
+				FindMovementTargetPosition();
+				movement_ricochet_count++;
+			}
+			else
+			{
+				EmptyDelegates();
+				pool_number_actor.ReturnEntity( this );
+				FFLogger.Log( "Failed" );
+			}
 		}
 	}
 
@@ -170,7 +184,7 @@ public class ActorNumber : MonoBehaviour, IActorNumber
 		{
 			movement_target_position = raycastHit.point;
 			movement_target          = raycastHit.collider.GetComponent< ICustomNormal >();
-			onFixedUpdate                 = OnMovementTarget;
+			onFixedUpdate            = OnMovementTarget;
 		}
 		else
 		{

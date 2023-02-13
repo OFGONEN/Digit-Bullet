@@ -37,6 +37,12 @@ namespace FFStudio
 
 			return list;
 		}
+
+		private void OnValidate()
+		{
+			UnityEditor.EditorUtility.SetDirty( this );
+			number_ricochet_count = Mathf.Max( trajectory_point_count, number_ricochet_count );
+		}
 #endif
     }
 }
