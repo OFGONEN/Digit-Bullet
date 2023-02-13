@@ -45,8 +45,9 @@ public class NumberDisplayer : MonoBehaviour
 			    number     = pool_digit_displayer.GetEntity();
 			var numberData = library_number_display.GetNumberDisplayData( digit_list[ i ] );
 
-			number.transform.parent = display_child;
+			number.transform.parent        = display_child;
 			number.transform.localPosition = Vector3.right * offset + Vector3.up * GameSettings.Instance.number_spawn_height;
+			number.transform.localScale    = Vector3.one;
 
 			offset += numberData.size + numberData.offset;
 
