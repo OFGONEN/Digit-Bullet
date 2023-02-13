@@ -11,8 +11,9 @@ public class CustomNormalSquare : MonoBehaviour, ICustomNormal
 {
 #region Fields
     [ LabelText( "Custom Pivot Point" ), SerializeField ] Vector3 pivot;
-    [ LabelText( "Custom Size" ), SerializeField ] Vector3 size;
+    [ LabelText( "Box Collider" ), SerializeField ] BoxCollider _boxCollider;
 
+    Vector3 size;
     Vector3 pivot_world;
 #endregion
 
@@ -23,6 +24,7 @@ public class CustomNormalSquare : MonoBehaviour, ICustomNormal
     private void Awake()
     {
 		pivot_world = transform.TransformPoint( pivot );
+		size        = Vector3.Scale( _boxCollider.size, transform.localScale );
 	}
 #endregion
 
@@ -59,7 +61,7 @@ public class CustomNormalSquare : MonoBehaviour, ICustomNormal
     {
 		var pivot = transform.TransformPoint( this.pivot );
 		Handles.Label( pivot, "Custom Square: " + pivot );
-		Handles.DrawWireCube( pivot, size );
+		Handles.DrawWireCube( pivot, Vector3.Scale( transform.localScale, _boxCollider.size ) );
 	}
 #endif
 #endregion

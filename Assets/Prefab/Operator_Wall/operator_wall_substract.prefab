@@ -51,6 +51,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4785121034205278132, guid: 85b62460e83aa4ad2bf2da084c9ca6c2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6744587407403196060, guid: 85b62460e83aa4ad2bf2da084c9ca6c2, type: 3}
+      propertyPath: m_Size.x
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7798430375086195127, guid: 85b62460e83aa4ad2bf2da084c9ca6c2, type: 3}
       propertyPath: m_Name
       value: operator_wall_substract

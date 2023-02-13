@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4e828250151b2749b911f18565ef428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _collider: {fileID: 4581086695468132328}
+  _collider: {fileID: 0}
   _particleData:
     particle_event: {fileID: 11400000, guid: fe240f220ab36cc44923227184f9c2a7, type: 2}
     alias: operator_symbol
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pivot: {x: 0, y: 0, z: 0}
-  size: {x: 1, y: 1, z: 1}
+  _boxCollider: {fileID: 6744587407403196060}
 --- !u!1 &9167750209287743773
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,7 +155,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7166967002503233859}
-  - component: {fileID: 4581086695468132328}
+  - component: {fileID: 3721484519116006036}
   - component: {fileID: 7944037481076433391}
   m_Layer: 30
   m_Name: collider_interaction
@@ -179,8 +179,8 @@ Transform:
   m_Father: {fileID: 1029865624504022645}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &4581086695468132328
-SphereCollider:
+--- !u!65 &3721484519116006036
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -190,7 +190,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7944037481076433391
 MonoBehaviour:

@@ -452,7 +452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pivot: {x: 0, y: 0, z: 0}
-  size: {x: 1, y: 5, z: 1}
+  _boxCollider: {fileID: 664922593}
 --- !u!65 &664922593
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -781,7 +781,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pivot: {x: 0, y: 0, z: 0}
-  size: {x: 1, y: 5, z: 1}
+  _boxCollider: {fileID: 1863179165}
 --- !u!65 &1863179165
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -924,7 +924,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pivot: {x: 0, y: 0, z: 0}
-  size: {x: 5, y: 1, z: 1}
+  _boxCollider: {fileID: 2010828276}
 --- !u!65 &2010828276
 BoxCollider:
   m_ObjectHideFlags: 0
