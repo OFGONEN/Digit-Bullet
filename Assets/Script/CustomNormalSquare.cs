@@ -10,7 +10,6 @@ using Sirenix.OdinInspector;
 public class CustomNormalSquare : MonoBehaviour, ICustomNormal
 {
 #region Fields
-    [ LabelText( "Custom Pivot Point" ), SerializeField ] Vector3 pivot;
     [ LabelText( "Box Collider" ), SerializeField ] BoxCollider _boxCollider;
 
     Vector3 size;
@@ -23,7 +22,7 @@ public class CustomNormalSquare : MonoBehaviour, ICustomNormal
 #region Unity API
     private void Awake()
     {
-		pivot_world = transform.TransformPoint( pivot );
+		pivot_world = _boxCollider.transform.TransformPoint( _boxCollider.center );
 		size        = Vector3.Scale( _boxCollider.size, transform.localScale );
 	}
 #endregion
@@ -59,7 +58,7 @@ public class CustomNormalSquare : MonoBehaviour, ICustomNormal
 #if UNITY_EDITOR
     private void OnDrawGizmos()
     {
-		var pivot = transform.TransformPoint( this.pivot );
+		var pivot = _boxCollider.transform.TransformPoint( _boxCollider.center );
 		Handles.Label( pivot, "Custom Square: " + pivot );
 		Handles.DrawWireCube( pivot, Vector3.Scale( transform.localScale, _boxCollider.size ) );
 	}
