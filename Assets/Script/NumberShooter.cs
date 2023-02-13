@@ -47,6 +47,12 @@ public class NumberShooter : MonoBehaviour
     {
 		onFingerDown = StartAim;
 	}
+	
+	public void OnLevelFinished()
+	{
+		EmptyDelegates();
+		_aimTrajectory.StopAim();
+	}
 
     public void OnFingerDown()
     {
