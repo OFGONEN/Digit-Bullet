@@ -69,7 +69,10 @@ public class NumberShooter : MonoBehaviour
 
 		number_spawn_index = 1;
 
-		for( var i = 0; i < CurrentLevelData.Instance.levelData.number_array_size; i++ )
+		for( var i = 0; 
+			i < CurrentLevelData.Instance.levelData.number_array_size && 
+			number_spawn_index < CurrentLevelData.Instance.levelData.number_array.Length; 
+			i++ )
 		{
 			var number = pool_number_actor.GetEntity();
 
