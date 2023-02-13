@@ -18,9 +18,9 @@ public class DigitDisplayer : MonoBehaviour
 #endregion
 
 #region API
-    public void UpdateVisual( NumberDisplayData data, Material material )
+    public void UpdateVisual( Mesh mesh, Material material )
     {
-		_meshFilter.mesh       = data.mesh;
+		_meshFilter.mesh       = mesh;
 		_meshRenderer.material = material;
 	}
 #endregion
