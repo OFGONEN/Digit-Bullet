@@ -50,11 +50,7 @@ public class NumberDisplayer : MonoBehaviour
 			number.UpdateVisual( numberData.mesh, GameSettings.Instance.number_material_positive );
 		}
 
-		display_child.localPosition = Vector3.left * number.transform.localPosition.x / 2f;	}
-
-    public void UpdateVisual( OperatorSymbol symbol, int value )
-    {
-		value.ExtractDigits( digit_list );
+		display_child.localPosition = Vector3.left * number.transform.localPosition.x / 2f;	
     }
 #endregion
 
@@ -79,6 +75,47 @@ public class NumberDisplayer : MonoBehaviour
 		{
             number = ( PrefabUtility.InstantiatePrefab( 
                 AssetDatabase.LoadAssetAtPath< GameObject >( "Assets/Prefab/character.prefab" ) ) as GameObject ).GetComponent< DigitDisplayer >();
+			var numberData = library_number_display.GetNumberDisplayData( digit_list[ i ] );
+
+			number.transform.parent        = display_child;
+			number.transform.localPosition = Vector3.right * offset + Vector3.up * GameSettings.Instance.number_spawn_height;
+
+			offset += numberData.size + numberData.offset;
+
+			number.UpdateVisual( numberData.mesh, GameSettings.Instance.number_material_positive );
+		}
+
+		display_child.localPosition = Vector3.left * number.transform.localPosition.x / 2f;
+	}
+
+	[ Button() ]
+	public void BakeVisual( OperatorSymbol symbol, int value )
+	{
+		UnityEditor.SceneManagement.EditorSceneManager.MarkAllScenesDirty();
+
+		display_child.DestroyAllChildren();
+
+		value.ExtractDigits( digit_list );
+		float offset = 0;
+
+
+		var symbolDisplay = ( PrefabUtility.InstantiatePrefab(
+			AssetDatabase.LoadAssetAtPath< GameObject >( "Assets/Prefab/character.prefab" ) ) as GameObject ).GetComponent< DigitDisplayer >();
+		var symbolData = library_number_display.GetNumberOperatorDisplayData( symbol );
+
+		symbolDisplay.transform.parent = display_child;
+		symbolDisplay.transform.localPosition = Vector3.right * offset + Vector3.up * GameSettings.Instance.number_spawn_height;
+
+		offset += symbolData.size + symbolData.offset;
+
+		symbolDisplay.UpdateVisual( symbolData.mesh, GameSettings.Instance.number_material_positive );
+
+		DigitDisplayer number = null;
+
+		for( var i = 0; i < digit_list.Count; i++ )
+		{
+			number = ( PrefabUtility.InstantiatePrefab(
+				AssetDatabase.LoadAssetAtPath< GameObject >( "Assets/Prefab/character.prefab" ) ) as GameObject ).GetComponent< DigitDisplayer >();
 			var numberData = library_number_display.GetNumberDisplayData( digit_list[ i ] );
 
 			number.transform.parent        = display_child;
