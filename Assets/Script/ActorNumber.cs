@@ -16,6 +16,7 @@ public class ActorNumber : MonoBehaviour, IActorNumber
 
   [ Title( "Components" ) ]
 	[ SerializeField ] Rigidbody _rigidbody;
+	[ SerializeField ] NumberDisplayer _numberDisplayer;
 
 	Vector3 movement_target_direction;
 	Vector3 movement_target_position;
@@ -59,21 +60,25 @@ public class ActorNumber : MonoBehaviour, IActorNumber
 	public void Add( int value )
 	{
 		number_value += value;
+		_numberDisplayer.UpdateVisual( number_value );
 	}
 
 	public void Substract( int value )
 	{
 		number_value -= value;
+		_numberDisplayer.UpdateVisual( number_value );
 	}
 
 	public void Multiply( int value )
 	{
 		number_value *= value;
+		_numberDisplayer.UpdateVisual( number_value );
 	}
 
 	public void Divide( int value )
 	{
 		number_value /= value;
+		_numberDisplayer.UpdateVisual( number_value );
 	}
 
 	public void OnTargetNumberTrigger()
@@ -95,6 +100,8 @@ public class ActorNumber : MonoBehaviour, IActorNumber
 		transform.localScale = Vector3.one * size;
 
 		number_value = value;
+
+		_numberDisplayer.UpdateVisual( number_value );
 	}
 
 	public void StartMovement( Vector3 direction )
