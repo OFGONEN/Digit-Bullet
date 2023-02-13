@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pool_number_actor: {fileID: 11400000, guid: 47c5f73274ce26347b24ff0112afc815, type: 2}
+  event_level_failed: {fileID: 11400000, guid: ec850936269bc2e47b26cfebd8bdad97, type: 2}
   _aimTrajectory: {fileID: 5892441122163037128}
 --- !u!1 &8034235177252266653
 GameObject:
