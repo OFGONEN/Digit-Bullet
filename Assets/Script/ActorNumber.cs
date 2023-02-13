@@ -60,25 +60,25 @@ public class ActorNumber : MonoBehaviour, IActorNumber
 	public void Add( int value )
 	{
 		number_value += value;
-		_numberDisplayer.UpdateVisual( number_value );
+		_numberDisplayer.UpdateVisual( number_value, GameSettings.Instance.number_material_positive );
 	}
 
 	public void Substract( int value )
 	{
 		number_value -= value;
-		_numberDisplayer.UpdateVisual( number_value );
+		_numberDisplayer.UpdateVisual( number_value, GameSettings.Instance.number_material_positive );
 	}
 
 	public void Multiply( int value )
 	{
 		number_value *= value;
-		_numberDisplayer.UpdateVisual( number_value );
+		_numberDisplayer.UpdateVisual( number_value, GameSettings.Instance.number_material_positive );
 	}
 
 	public void Divide( int value )
 	{
 		number_value /= value;
-		_numberDisplayer.UpdateVisual( number_value );
+		_numberDisplayer.UpdateVisual( number_value, GameSettings.Instance.number_material_positive );
 	}
 
 	public void OnTargetNumberTrigger()
@@ -101,7 +101,7 @@ public class ActorNumber : MonoBehaviour, IActorNumber
 
 		number_value = value;
 
-		_numberDisplayer.UpdateVisual( number_value );
+		_numberDisplayer.UpdateVisual( number_value, GameSettings.Instance.number_material_positive );
 	}
 
 	public void StartMovement( Vector3 direction )
