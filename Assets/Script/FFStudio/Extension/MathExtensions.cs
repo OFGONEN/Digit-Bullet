@@ -78,5 +78,21 @@ namespace FFStudio
 		{
 			return Mathf.Sqrt( hypotenuseEdge * hypotenuseEdge - edge1 * edge1 );
 		}
+
+		public static void ExtractDigits( this int value, List< int > list )
+		{
+			list.Clear();
+
+			int remainder;
+			int tempValue = Mathf.Abs( value );
+
+			while( tempValue > 0 )
+			{
+				remainder = tempValue % 10;
+				tempValue /= 10;
+
+				list.Insert( 0, remainder );
+			}
+		}
 	}
 }
