@@ -3,6 +3,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using FFStudio;
 using Sirenix.OdinInspector;
 
@@ -16,7 +17,8 @@ public class TargetNumber : MonoBehaviour
     [ SerializeField ] GameEvent event_target_number_appear;
     [ SerializeField ] GameEvent event_target_number_disappear;
 
-    int target_number_current;
+  [ Title( "Components" ) ]
+	[ SerializeField ] NumberDisplayer _numberDisplayer;
 #endregion
 
 #region Properties
@@ -32,6 +34,11 @@ public class TargetNumber : MonoBehaviour
     {
 		event_target_number_disappear.Raise();
     }
+
+	private void Start()
+	{
+		_numberDisplayer.UpdateVisual( target_number, GameSettings.Instance.number_target_material );
+	}
 #endregion
 
 #region API
@@ -39,12 +46,14 @@ public class TargetNumber : MonoBehaviour
     {
         var actorNumber = collider.GetComponent< ComponentHost >().HostComponent as ActorNumber;
 
-		target_number_current -= actorNumber.NumberValue;
+		target_number -= actorNumber.NumberValue;
 
 		actorNumber.OnTargetNumberTrigger();
 
-		if( target_number_current <= 0 )
+		if( target_number <= 0 )
 			Disappear();
+		else
+			_numberDisplayer.UpdateVisual( target_number, GameSettings.Instance.number_target_material );
 	}
 #endregion
 
@@ -57,6 +66,10 @@ public class TargetNumber : MonoBehaviour
 
 #region Editor Only
 #if UNITY_EDITOR
+	private void OnDrawGizmos()
+	{
+		Handles.Label( transform.position, "Target Number: " + target_number );
+	}
 #endif
 #endregion
 }

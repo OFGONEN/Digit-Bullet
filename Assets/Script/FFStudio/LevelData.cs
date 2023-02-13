@@ -17,6 +17,7 @@ namespace FFStudio
 
 	  [ Title( "Level Releated" ) ]
 	  	[ LabelText( "Aim Trajectory Contact Point Count" ) ] public int trajectory_point_count;
+	  	[ LabelText( "Number Ricochet Count" ) ] public int number_ricochet_count;
 	  	[ LabelText( "Numbers To Shoot" ) ] public int[] number_array;
 	  	[ LabelText( "First Number's Spawn Offset" ) ] public Vector3 number_array_spawn_offset;
 	  	[ LabelText( "Number's offset in between" ) ] public Vector3 number_array_offset;
@@ -35,6 +36,12 @@ namespace FFStudio
 				list.Add( Path.GetFileNameWithoutExtension( SceneUtility.GetScenePathByBuildIndex( i ) ) + $" ({i})", i );
 
 			return list;
+		}
+
+		private void OnValidate()
+		{
+			UnityEditor.EditorUtility.SetDirty( this );
+			number_ricochet_count = Mathf.Max( trajectory_point_count, number_ricochet_count );
 		}
 #endif
     }

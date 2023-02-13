@@ -28,7 +28,7 @@ public class NumberDisplayer : MonoBehaviour
 #endregion
 
 #region API
-    public void UpdateVisual( int value )
+    public void UpdateVisual( int value, Material material )
     {
         for( var i = 0; i < digit_displayer_list.Count; i++ )
 			digit_displayer_list[ i ].ReturnToPool();
@@ -45,12 +45,14 @@ public class NumberDisplayer : MonoBehaviour
 			    number     = pool_digit_displayer.GetEntity();
 			var numberData = library_number_display.GetNumberDisplayData( digit_list[ i ] );
 
-			number.transform.parent = display_child;
+			number.transform.parent        = display_child;
 			number.transform.localPosition = Vector3.right * offset + Vector3.up * GameSettings.Instance.number_spawn_height;
+			number.transform.localScale    = Vector3.one;
 
 			offset += numberData.size + numberData.offset;
 
-			number.UpdateVisual( numberData.mesh, GameSettings.Instance.number_material_positive );
+			number.UpdateVisual( numberData.mesh, material );
+			digit_displayer_list.Add( number );
 		}
 
 		display_child.localPosition = Vector3.left * number.transform.localPosition.x / 2f;	
