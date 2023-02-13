@@ -25,6 +25,7 @@ public class DigitDisplayer : MonoBehaviour
 #region API
     public void UpdateVisual( Mesh mesh, Material material )
     {
+		gameObject.SetActive( true );
 		_meshFilter.mesh       = mesh;
 		_meshRenderer.material = material;
 	}
