@@ -23,6 +23,7 @@ namespace FFStudio
 	[ Title( "Pool" ) ]
 		[ SerializeField ] Pool_UIPopUpText pool_UIPopUpText;
 		[ SerializeField ] PoolActorNumber pool_number_actor;
+		[ SerializeField ] PoolDigitDisplayer pool_digit_displayer;
 #endregion
 
 #region UnityAPI
@@ -37,6 +38,8 @@ namespace FFStudio
 
 			pool_UIPopUpText.InitPool( transform, false );
 			pool_number_actor.InitPool( transform, false );
+			pool_digit_displayer.InitPool( transform, false );
+
 			onAwakeEvent.Invoke();
 		}
 
