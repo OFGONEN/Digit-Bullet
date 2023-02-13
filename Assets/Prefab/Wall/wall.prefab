@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6416434474131690133}
   m_Layer: 29
-  m_Name: gfx_interaction
+  m_Name: gfx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,5 +142,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c8914b3f01dae46964fc25117cabf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pivot: {x: 0, y: 0, z: 0}
   _boxCollider: {fileID: 6744587407403196060}
