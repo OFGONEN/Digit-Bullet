@@ -11,9 +11,7 @@ public class CustomNormalSquare : MonoBehaviour, ICustomNormal
 {
 #region Fields
     [ LabelText( "Box Collider" ), SerializeField ] BoxCollider _boxCollider;
-
-    Vector3 size;
-    Vector3 pivot_world;
+    [ ShowInInspector, ReadOnly ] Vector3 size;
 #endregion
 
 #region Properties
@@ -22,8 +20,7 @@ public class CustomNormalSquare : MonoBehaviour, ICustomNormal
 #region Unity API
     private void Awake()
     {
-		pivot_world = _boxCollider.transform.TransformPoint( _boxCollider.center );
-		size        = Vector3.Scale( _boxCollider.size, transform.localScale );
+		size = Vector3.Scale( _boxCollider.size, _boxCollider.transform.localScale );
 	}
 #endregion
 
@@ -31,22 +28,24 @@ public class CustomNormalSquare : MonoBehaviour, ICustomNormal
 	public Vector3 GetNormal( Vector3 contactPoint )
     {
 		Vector3 normal = Vector3.up;
-		if( contactPoint.y >= pivot_world.y + size.y / 2f )
-		{
+
+		var localContactPoint = _boxCollider.transform.InverseTransformPoint( contactPoint );
+
+		if( localContactPoint.y >= size.y / 2f )
 			normal = Vector3.up;
-		}
-		else if( contactPoint.y <= pivot_world.y - size.y / 2f )
-		{
+		else if( localContactPoint.y <= -size.y / 2f )
 			normal = Vector3.down;
-		}
 		else
 		{
-			if( contactPoint.x >= pivot_world.x + size.x / 2f )
+			if( localContactPoint.x >= size.x / 2f )
 				normal = Vector3.right;
 			else
 				normal = Vector3.left;
 		}
 
+		normal = _boxCollider.transform.TransformDirection( normal );
+
+		Debug.DrawRay( contactPoint, normal, Color.red, 1f );
 		return normal;
 	}
 #endregion
@@ -56,12 +55,6 @@ public class CustomNormalSquare : MonoBehaviour, ICustomNormal
 
 #region Editor Only
 #if UNITY_EDITOR
-    private void OnDrawGizmos()
-    {
-		var pivot = _boxCollider.transform.TransformPoint( _boxCollider.center );
-		Handles.Label( pivot, "Custom Square: " + pivot );
-		Handles.DrawWireCube( pivot, Vector3.Scale( transform.localScale, _boxCollider.size ) );
-	}
 #endif
 #endregion
 }

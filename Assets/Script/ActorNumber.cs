@@ -29,6 +29,7 @@ public class ActorNumber : MonoBehaviour, IActorNumber
 	RecycledTween recycledTween = new RecycledTween();
 
 	UnityMessage onFixedUpdate;
+	UnityMessage onDisappear;
 #endregion
 
 #region Properties
@@ -89,9 +90,9 @@ public class ActorNumber : MonoBehaviour, IActorNumber
 	public void OnSafetyNetTrigger() 
 	{
 		pool_number_actor.ReturnEntity( this );
+		onDisappear?.Invoke();
 	}
 // IActorNumber end
-
 	public void Spawn( Vector3 position, float size, int value )
 	{
 		gameObject.SetActive( true );
@@ -104,10 +105,12 @@ public class ActorNumber : MonoBehaviour, IActorNumber
 		_numberDisplayer.UpdateVisual( number_value, GameSettings.Instance.number_material_positive );
 	}
 
-	public void StartMovement( Vector3 direction )
+	public void StartMovement( Vector3 direction, UnityMessage onDisappear = null )
 	{
 		movement_target_direction = direction;
 		movement_ricochet_count   = 1;
+
+		this.onDisappear = onDisappear;
 
 		FindMovementTargetPosition();
 	}
@@ -173,7 +176,7 @@ public class ActorNumber : MonoBehaviour, IActorNumber
 			{
 				EmptyDelegates();
 				pool_number_actor.ReturnEntity( this );
-				FFLogger.Log( "Failed" );
+				onDisappear?.Invoke();
 			}
 		}
 	}

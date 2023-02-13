@@ -46,6 +46,11 @@ namespace FFStudio
 
         }
 
+        public void LevelFailedResponse()
+        {
+			target_number_count = 0;
+		}
+
         public void OnTargetNumberAppear()
         {
 			target_number_count++;

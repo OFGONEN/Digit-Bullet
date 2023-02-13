@@ -11,6 +11,7 @@ public class NumberShooter : MonoBehaviour
 #region Fields
   [ Title( "Shared" ) ]
     [ SerializeField ] PoolActorNumber pool_number_actor;
+    [ SerializeField ] GameEvent event_level_failed;
 
   [ Title( "Components" ) ]
     [ SerializeField ] AimTrajectory _aimTrajectory;
@@ -46,6 +47,12 @@ public class NumberShooter : MonoBehaviour
     public void OnLevelStart()
     {
 		onFingerDown = StartAim;
+	}
+	
+	public void OnLevelFinished()
+	{
+		EmptyDelegates();
+		_aimTrajectory.StopAim();
 	}
 
     public void OnFingerDown()
@@ -104,15 +111,17 @@ public class NumberShooter : MonoBehaviour
 
 	void ShootCurrentNumber()
 	{
-		number_current.StartMovement( _aimTrajectory.AimDirection );
-
 		if( number_list.Count > 0 )
 		{
+			number_current.StartMovement( _aimTrajectory.AimDirection );
+
 			for( var i = number_list.Count - 1; i > 0; i-- )
 				number_list[ i ].JumpSmall( number_list[ i - 1 ].transform.position );
 
 			number_list[ 0 ].JumpBig( position, OnJumpBigComplete );
 		}
+		else
+			number_current.StartMovement( _aimTrajectory.AimDirection, event_level_failed.Raise );
 	}
 
 	void OnJumpBigComplete()

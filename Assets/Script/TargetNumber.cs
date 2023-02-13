@@ -30,11 +30,6 @@ public class TargetNumber : MonoBehaviour
 		event_target_number_appear.Raise();
 	}
 
-    void OnDisable()
-    {
-		event_target_number_disappear.Raise();
-    }
-
 	private void Start()
 	{
 		_numberDisplayer.UpdateVisual( target_number, GameSettings.Instance.number_target_material );
@@ -61,6 +56,7 @@ public class TargetNumber : MonoBehaviour
     void Disappear()
     {
 		gameObject.SetActive( false );
+		event_target_number_disappear.Raise();
 	}
 #endregion
 
