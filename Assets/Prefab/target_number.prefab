@@ -88,7 +88,7 @@ GameObject:
   m_Layer: 30
   m_Name: target_number
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
@@ -125,6 +125,7 @@ MonoBehaviour:
   target_number: 10
   event_target_number_appear: {fileID: 11400000, guid: 0cf126b754cafc448bc95328725be813, type: 2}
   event_target_number_disappear: {fileID: 11400000, guid: cfb90616259327f48a52df09501da4df, type: 2}
+  _numberDisplayer: {fileID: 7075033578040945782}
 --- !u!1 &6139927023018439606
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,3 +219,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5659945377827221853, guid: 08756b9fbb52d78499fb57687fdb2fc4, type: 3}
   m_PrefabInstance: {fileID: 7075246874762095520}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7075033578040945782 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8939055395129302, guid: 08756b9fbb52d78499fb57687fdb2fc4, type: 3}
+  m_PrefabInstance: {fileID: 7075246874762095520}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 693c045e29f1d154d8b97bf3ea113332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
