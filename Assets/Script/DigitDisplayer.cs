@@ -3,10 +3,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Sirenix.OdinInspector;
 
 public class DigitDisplayer : MonoBehaviour
 {
 #region Fields
+  [ Title( "Shared" ) ]
+    [ SerializeField ] PoolDigitDisplayer pool_digit_displayer;
+    
+  [ Title( "Components" ) ]
     [ SerializeField ] MeshFilter _meshFilter;
     [ SerializeField ] MeshRenderer _meshRenderer;
 #endregion
@@ -15,6 +20,10 @@ public class DigitDisplayer : MonoBehaviour
 #endregion
 
 #region Unity API
+    private void OnDisable()
+    {
+		pool_digit_displayer.ReturnEntity( this );
+	}
 #endregion
 
 #region API
@@ -22,6 +31,11 @@ public class DigitDisplayer : MonoBehaviour
     {
 		_meshFilter.mesh       = mesh;
 		_meshRenderer.material = material;
+	}
+
+    public void ReturnToPool()
+    {
+		pool_digit_displayer.ReturnEntity( this );
 	}
 #endregion
 
