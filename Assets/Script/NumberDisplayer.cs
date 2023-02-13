@@ -18,6 +18,7 @@ public class NumberDisplayer : MonoBehaviour
     [ SerializeField ] Transform display_child;
 
     [ ShowInInspector, ReadOnly ] List< int > digit_list = new List< int >( 6 );
+    [ ShowInInspector, ReadOnly ] List< DigitDisplayer > digit_displayer_list = new List< DigitDisplayer >( 6 );
 #endregion
 
 #region Properties
@@ -29,8 +30,10 @@ public class NumberDisplayer : MonoBehaviour
 #region API
     public void UpdateVisual( int value )
     {
-        for( var i = display_child.childCount - 1; i >= 0; i-- )
-			display_child.GetChild( i ).gameObject.SetActive( false );
+        for( var i = 0; i < digit_displayer_list.Count; i++ )
+			digit_displayer_list[ i ].ReturnToPool();
+
+		digit_displayer_list.Clear();
 
 		value.ExtractDigits( digit_list );
 		float offset = 0;

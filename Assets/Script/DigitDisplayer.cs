@@ -20,10 +20,6 @@ public class DigitDisplayer : MonoBehaviour
 #endregion
 
 #region Unity API
-    private void OnDisable()
-    {
-		pool_digit_displayer.ReturnEntity( this );
-	}
 #endregion
 
 #region API
