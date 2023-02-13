@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5960073828495181270}
   - component: {fileID: 2680992119482859394}
   m_Layer: 0
-  m_Name: number
+  m_Name: character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4898a19d66498dc4fb221308eb332e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pool_digit_displayer: {fileID: 11400000, guid: ca63579bf634991458b93639f97e3c4c, type: 2}
   _meshFilter: {fileID: 5960073828495181270}
   _meshRenderer: {fileID: 2680992119482859394}
 --- !u!33 &5960073828495181270

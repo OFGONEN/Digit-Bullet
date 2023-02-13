@@ -22,6 +22,10 @@ namespace FFStudio
 		[ LabelText( "Jump Small Duration" ) ] public float actor_jump_small_duration;
 		[ LabelText( "Jump Small Ease" ) ] public Ease actor_jump_small_ease;
 
+    [ Title( "Number" ) ]
+		[ LabelText( "Number Positive Material" ) ] public Material number_material_positive;
+		[ LabelText( "Number Operator Positive Material" ) ] public Material number_operator_material_positive;
+		[ LabelText( "Number and Operator Local Spawn Height" ) ] public float number_spawn_height;
 
     [ Title( "Trajectory" ) ]
 		[ LabelText( "Trajectory Single Line Max Length" ) ] public float trajectory_line_length;

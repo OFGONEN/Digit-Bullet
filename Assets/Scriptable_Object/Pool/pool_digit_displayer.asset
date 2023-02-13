@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd5c336887d0c1f499c7c0c222b07191, type: 3}
   m_Name: pool_digit_displayer
   m_EditorClassIdentifier: 
-  stackSize: 64
+  stackSize: 16
   pool_entity: {fileID: 2436422240933135318, guid: d3afc801a6c8f8c49971209a3c64c11f, type: 3}
