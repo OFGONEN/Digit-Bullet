@@ -20,7 +20,8 @@ public class CustomNormalSquare : MonoBehaviour, ICustomNormal
 #region Unity API
     private void Awake()
     {
-		size = Vector3.Scale( _boxCollider.size, _boxCollider.transform.localScale );
+		// size = Vector3.Scale( _boxCollider.size, _boxCollider.transform.localScale );
+		size = _boxCollider.size;
 	}
 #endregion
 
@@ -29,23 +30,21 @@ public class CustomNormalSquare : MonoBehaviour, ICustomNormal
     {
 		Vector3 normal = Vector3.up;
 
-		var localContactPoint = _boxCollider.transform.InverseTransformPoint( contactPoint );
+		var localContactPoint = _boxCollider.transform.InverseTransformPoint( contactPoint ) * 1.05f;
 
 		if( localContactPoint.y >= size.y / 2f )
-			normal = Vector3.up;
+			normal = _boxCollider.transform.up;
 		else if( localContactPoint.y <= -size.y / 2f )
-			normal = Vector3.down;
+			normal = _boxCollider.transform.up * -1f;
 		else
 		{
 			if( localContactPoint.x >= size.x / 2f )
-				normal = Vector3.right;
+				normal = _boxCollider.transform.right;
 			else
-				normal = Vector3.left;
+				normal = _boxCollider.transform.right * -1f;
 		}
 
-		normal = _boxCollider.transform.TransformDirection( normal );
-
-		Debug.DrawRay( contactPoint, normal, Color.red, 1f );
+		// Debug.DrawRay( contactPoint, normal, Color.red, 1f );
 		return normal;
 	}
 #endregion
