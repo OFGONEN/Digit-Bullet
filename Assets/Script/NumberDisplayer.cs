@@ -28,7 +28,7 @@ public class NumberDisplayer : MonoBehaviour
 #endregion
 
 #region API
-    public void UpdateVisual( int value )
+    public void UpdateVisual( int value, Material material )
     {
         for( var i = 0; i < digit_displayer_list.Count; i++ )
 			digit_displayer_list[ i ].ReturnToPool();
@@ -51,7 +51,8 @@ public class NumberDisplayer : MonoBehaviour
 
 			offset += numberData.size + numberData.offset;
 
-			number.UpdateVisual( numberData.mesh, GameSettings.Instance.number_material_positive );
+			number.UpdateVisual( numberData.mesh, material );
+			digit_displayer_list.Add( number );
 		}
 
 		display_child.localPosition = Vector3.left * number.transform.localPosition.x / 2f;	
