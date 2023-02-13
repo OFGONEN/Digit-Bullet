@@ -131,6 +131,17 @@ public class NumberDisplayer : MonoBehaviour
 
 		display_child.localPosition = Vector3.left * number.transform.localPosition.x / 2f;
 	}
+
+	[ Button() ]
+	public void ChangeMaterial( Material material )
+	{
+		UnityEditor.SceneManagement.EditorSceneManager.MarkAllScenesDirty();
+
+		var rendererArray = display_child.GetComponentsInChildren< MeshRenderer >();
+
+		for( var i = 0; i < rendererArray.Length; i++ )
+			rendererArray[ i ].sharedMaterial = material;
+	}
 #endif
 #endregion
 }
