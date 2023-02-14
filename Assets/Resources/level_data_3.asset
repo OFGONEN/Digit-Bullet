@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene_index: 3
   scene_overrideAsActiveScene: 0
-  trajectory_point_count: 5
+  trajectory_point_count: 10
   number_ricochet_count: 20
-  number_array: 0100000001000000010000000100000001000000
-  number_array_spawn_offset: {x: 0.75, y: 0.25, z: 0}
-  number_array_offset: {x: -0.3, y: 0, z: 0}
+  number_array: 010000000100000002000000020000000300000003000000
+  number_array_spawn_offset: {x: -0.75, y: 0, z: 0}
+  number_array_offset: {x: 0.3, y: 0, z: 0}
   number_array_size: 1
   number_scale: 1
   number_array_scale: 0.5
