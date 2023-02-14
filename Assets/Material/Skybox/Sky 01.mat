@@ -195,7 +195,7 @@ Material:
     m_Floats:
     - _BackgroundCat: 1
     - _BackgroundCubemapSpace: 0
-    - _BackgroundExposure: 1
+    - _BackgroundExposure: 0
     - _BackgroundMode: 0
     - _Banner: 1
     - _BuiltInFog: 1
@@ -287,11 +287,11 @@ Material:
     - _StarsHeigntMask: 1
     - _StarsHorizonMask: 1
     - _StarsIntensity: 5
-    - _StarsLayer: 3
+    - _StarsLayer: 1
     - _StarsMaskPower: 1
     - _StarsRotation: 360
     - _StarsRotationSpeed: 0.5
-    - _StarsSize: 0.6
+    - _StarsSize: 0.924
     - _StarsSunMask: 0.01
     - _SunCat: 1
     - _SunIntensity: 2
@@ -323,19 +323,19 @@ Material:
     - _CloudLightColor: {r: 0.5620674, g: 0.6149295, b: 0.6764706, a: 1}
     - _CloudShadowColor: {r: 0.03952206, g: 0.12203295, b: 0.31617644, a: 1}
     - _CloudsLightColor: {r: 0.7065311, g: 0.9378087, b: 0.9705882, a: 1}
-    - _CloudsShadowColor: {r: 0, g: 0.37383357, b: 0.5588235, a: 1}
+    - _CloudsShadowColor: {r: 0.7058824, g: 0.93725497, b: 0.9725491, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color0: {r: 0, g: 0.5054344, b: 1, a: 0}
     - _Color1: {r: 1, g: 1, b: 1, a: 0}
     - _Color2: {r: 0.059472326, g: 0.25068596, b: 0.8088235, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Eq: {r: 1, g: 0.6769777, b: 0.330882, a: 0}
-    - _EquatorColor: {r: 0, g: 0.8602941, b: 0.8037578, a: 1}
+    - _EquatorColor: {r: 0, g: 0.67080736, b: 1, a: 1}
     - _Ground: {r: 0.4779411, g: 0.43111518, b: 0.23545504, a: 0}
-    - _GroundColor: {r: 0.30211937, g: 0.724708, b: 0.9338235, a: 1}
+    - _GroundColor: {r: 0.11859834, g: 0.70984906, b: 1, a: 1}
     - _MoonColor: {r: 1, g: 1, b: 1, a: 1}
     - _Sky: {r: 0.6691177, g: 0.29519898, b: 0.29519898, a: 0}
-    - _SkyColor: {r: 0, g: 0.08650014, b: 0.53676474, a: 1}
+    - _SkyColor: {r: 0, g: 0.67080736, b: 1, a: 1}
     - _SkyboxRotationAxis: {r: 0, g: 1, b: 0, a: 0}
     - _Skycol: {r: 0.27941146, g: 0.64219046, b: 1, a: 0}
     - _SunColor: {r: 0.5514706, g: 0.8515212, b: 1, a: 1}
