@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 198206202186760472}
   - component: {fileID: 199050071548729608}
   m_Layer: 0
-  m_Name: ConfettiFountainMagic
+  m_Name: ConfettiFountainMagic_confetti
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
