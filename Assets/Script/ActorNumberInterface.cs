@@ -48,6 +48,16 @@ public class ActorNumberInterface : ScriptableObject, IActorNumber
 	{
 		number_current.OnSafetyNetTrigger();
 	}
+
+	public void DoPunchScale()
+	{
+		number_current.DoPunchScale();
+	}
+
+	public void DoShakeScale()
+	{
+		number_current.DoShakeScale();
+	}
 #endregion
 
 #region Implementation

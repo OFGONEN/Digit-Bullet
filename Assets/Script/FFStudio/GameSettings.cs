@@ -13,6 +13,8 @@ namespace FFStudio
     [ Title( "Actor Number" ) ]
 		[ LabelText( "Movement Speed" ) ] public float actor_movement_speed;
 		[ LabelText( "Movement Max Delta" ) ] public float actor_movement_delta_max;
+		[ LabelText( "Punch Scale" ) ] public PunchScaleTween actor_scale_punch;
+		[ LabelText( "Shake Scale" ) ] public ShakeScaleTween actor_scale_shake;
 
     [ Title( "Actor Number Jump" ) ]
 		[ LabelText( "Jump Big Power" ) ] public float actor_jump_big_power;
