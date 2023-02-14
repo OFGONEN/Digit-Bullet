@@ -92,6 +92,16 @@ public class ActorNumber : MonoBehaviour, IActorNumber
 		pool_number_actor.ReturnEntity( this );
 		onDisappear?.Invoke();
 	}
+
+	public void DoPunchScale()
+	{
+
+	}
+
+	public void DoShakeScale()
+	{
+
+	}
 // IActorNumber end
 	public void Spawn( Vector3 position, float size, int value )
 	{

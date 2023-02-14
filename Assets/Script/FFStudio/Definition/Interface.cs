@@ -29,5 +29,7 @@ namespace FFStudio
 		void Multiply( int value );
 		void Divide( int value );
 		void OnSafetyNetTrigger();
+		void DoPunchScale();
+		void DoShakeScale();
 	}
 }
