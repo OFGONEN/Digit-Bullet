@@ -13,6 +13,8 @@ namespace FFStudio
     [ Title( "Actor Number" ) ]
 		[ LabelText( "Movement Speed" ) ] public float actor_movement_speed;
 		[ LabelText( "Movement Max Delta" ) ] public float actor_movement_delta_max;
+		[ LabelText( "Punch Scale" ) ] public PunchScaleTween actor_scale_punch;
+		[ LabelText( "Shake Scale" ) ] public ShakeScaleTween actor_scale_shake;
 
     [ Title( "Actor Number Jump" ) ]
 		[ LabelText( "Jump Big Power" ) ] public float actor_jump_big_power;
@@ -24,6 +26,7 @@ namespace FFStudio
 
     [ Title( "Number" ) ]
 		[ LabelText( "Number Positive Material" ) ] public Material number_material_positive;
+		[ LabelText( "Number Waiting Positive Material" ) ] public Material number_waiting_material_positive;
 		[ LabelText( "Number Operator Positive Material" ) ] public Material number_operator_material_positive;
 		[ LabelText( "TargetNumber Positive Material" ) ] public Material number_target_material;
 		[ LabelText( "Number and Operator Local Spawn Height" ) ] public float number_spawn_height;

@@ -72,7 +72,8 @@ public class NumberShooter : MonoBehaviour
 		number_current = pool_number_actor.GetEntity();
 		number_current.Spawn( position,
 			CurrentLevelData.Instance.levelData.number_scale,
-			CurrentLevelData.Instance.levelData.number_array[ 0 ] );
+			CurrentLevelData.Instance.levelData.number_array[ 0 ],
+			GameSettings.Instance.number_material_positive );
 
 		number_spawn_index = 1;
 
@@ -85,10 +86,10 @@ public class NumberShooter : MonoBehaviour
 
 			number.Spawn( position + CurrentLevelData.Instance.levelData.number_array_spawn_offset + CurrentLevelData.Instance.levelData.number_array_offset * i,
 			CurrentLevelData.Instance.levelData.number_array_scale,
-			CurrentLevelData.Instance.levelData.number_array[ number_spawn_index ] );
+			CurrentLevelData.Instance.levelData.number_array[ number_spawn_index ],
+			GameSettings.Instance.number_waiting_material_positive );
 
 			number_spawn_index++;
-
 			number_list.Add( number );
 		}
 	}
@@ -138,7 +139,8 @@ public class NumberShooter : MonoBehaviour
 
 			number.Spawn( position + CurrentLevelData.Instance.levelData.number_array_spawn_offset + CurrentLevelData.Instance.levelData.number_array_offset * ( number_list.Count - 1 ),
 				CurrentLevelData.Instance.levelData.number_array_scale,
-				CurrentLevelData.Instance.levelData.number_array[ number_spawn_index ] );
+				CurrentLevelData.Instance.levelData.number_array[ number_spawn_index ],
+				GameSettings.Instance.number_waiting_material_positive );
 
 			number_spawn_index++;
 		}
