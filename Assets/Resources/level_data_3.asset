@@ -15,7 +15,7 @@ MonoBehaviour:
   scene_index: 3
   scene_overrideAsActiveScene: 0
   trajectory_point_count: 5
-  number_ricochet_count: 20
+  number_ricochet_count: 10
   number_array: 010000000100000002000000020000000300000003000000
   number_array_spawn_offset: {x: -0.75, y: 0, z: 0}
   number_array_offset: {x: 0.3, y: 0, z: 0}
