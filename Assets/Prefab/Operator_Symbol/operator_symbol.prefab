@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1029865624504022645}
   - component: {fileID: 981120267581516563}
+  - component: {fileID: 3829436962143943538}
   m_Layer: 30
   m_Name: operator_symbol
   m_TagString: Untagged
@@ -86,6 +87,54 @@ MonoBehaviour:
     offset: {x: 0, y: 0, z: 0}
     size: 1
     keepParentRotation: 0
+--- !u!114 &3829436962143943538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7798430375086195127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 535060a834b6f6942ad767f12f31b327, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transform_target: {fileID: 3257953274114547034}
+  playOnStart: 1
+  tweenData:
+    rid: 7451529166765162496
+  references:
+    version: 2
+    RefIds:
+    - rid: 7451529166765162496
+      type: {class: WaveTweenData, ns: FFStudio, asm: Assembly-CSharp}
+      data:
+        description: 
+        sequenceElementType: 0
+        insertion_time: 0
+        tweenEventDatas: []
+        easing: 1
+        loop: 0
+        loop_type: 1
+        loop_isInfinite: 1
+        loop_count: 1
+        unityEvent_onCompleteEvent:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 3829436962143943538}
+              m_TargetAssemblyTypeName: FFStudio.TweenPlayer, Assembly-CSharp
+              m_MethodName: Play
+              m_Mode: 1
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+        wave_radius: 0.15
+        wave_speed: 0.1
 --- !u!1 &8837929952958308686
 GameObject:
   m_ObjectHideFlags: 0
