@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 1029865624504022645}
   - component: {fileID: 1639771293308092627}
   m_Layer: 30
-  m_Name: operator_wall
+  m_Name: operator_wall_square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
