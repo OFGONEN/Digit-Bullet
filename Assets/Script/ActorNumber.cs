@@ -95,12 +95,12 @@ public class ActorNumber : MonoBehaviour, IActorNumber
 
 	public void DoPunchScale()
 	{
-
+		recycledTween.Recycle( GameSettings.Instance.actor_scale_punch.CreateTween( _numberDisplayer.transform ) );
 	}
 
 	public void DoShakeScale()
 	{
-
+		recycledTween.Recycle( GameSettings.Instance.actor_scale_shake.CreateTween( _numberDisplayer.transform ) );
 	}
 // IActorNumber end
 	public void Spawn( Vector3 position, float size, int value )
