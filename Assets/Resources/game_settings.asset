@@ -40,7 +40,7 @@ MonoBehaviour:
   trajectory_line_length: 10
   trajectory_layer: 29
   camera_follow_speed_depth: 2.8
-  maxLevelCount: 5
+  maxLevelCount: 6
   useRemoteConfig_GameSettings: 0
   useRemoteConfig_Components: 0
   ui_Entity_Move_TweenDuration: 0.5
