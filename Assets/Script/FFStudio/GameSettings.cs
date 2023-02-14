@@ -26,6 +26,7 @@ namespace FFStudio
 
     [ Title( "Number" ) ]
 		[ LabelText( "Number Positive Material" ) ] public Material number_material_positive;
+		[ LabelText( "Number Waiting Positive Material" ) ] public Material number_waiting_material_positive;
 		[ LabelText( "Number Operator Positive Material" ) ] public Material number_operator_material_positive;
 		[ LabelText( "TargetNumber Positive Material" ) ] public Material number_target_material;
 		[ LabelText( "Number and Operator Local Spawn Height" ) ] public float number_spawn_height;
