@@ -103,7 +103,7 @@ public class ActorNumber : MonoBehaviour, IActorNumber
 		recycledTween.Recycle( GameSettings.Instance.actor_scale_shake.CreateTween( _numberDisplayer.transform ) );
 	}
 // IActorNumber end
-	public void Spawn( Vector3 position, float size, int value )
+	public void Spawn( Vector3 position, float size, int value, Material material )
 	{
 		gameObject.SetActive( true );
 
@@ -112,7 +112,7 @@ public class ActorNumber : MonoBehaviour, IActorNumber
 
 		number_value = value;
 
-		_numberDisplayer.UpdateVisual( number_value, GameSettings.Instance.number_material_positive );
+		_numberDisplayer.UpdateVisual( number_value, material );
 	}
 
 	public void StartMovement( Vector3 direction, UnityMessage onDisappear = null )
