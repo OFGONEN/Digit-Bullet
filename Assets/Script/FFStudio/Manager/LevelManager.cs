@@ -51,6 +51,11 @@ namespace FFStudio
 			target_number_count = 0;
 		}
 
+        public void LevelResetResponse()
+        {
+			target_number_count = 0;
+		}
+
         public void OnTargetNumberAppear()
         {
 			target_number_count++;
