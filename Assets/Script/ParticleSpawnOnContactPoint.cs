@@ -8,8 +8,8 @@ using FFStudio;
 public class ParticleSpawnOnContactPoint : MonoBehaviour
 {
 #region Fields
-    [ SerializeField ] BoxCollider _boxCollider;
-    [ SerializeField ] CustomNormalSquare customNormal;
+    [ SerializeField ] Collider _boxCollider;
+    [ SerializeField ] CustomNormal customNormal;
     [ SerializeField ] ParticleDataForward _particleData;
 #endregion
 

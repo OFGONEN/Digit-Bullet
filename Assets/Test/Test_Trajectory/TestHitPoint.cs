@@ -12,7 +12,7 @@ public class TestHitPoint : MonoBehaviour
 #region Fields
     [ SerializeField ] Transform target;
 
-    ICustomNormal _customNormal;
+    CustomNormal _customNormal;
 #endregion
 
 #region Properties
@@ -21,7 +21,7 @@ public class TestHitPoint : MonoBehaviour
 #region Unity API
     private void Awake()
     {
-        _customNormal = target.GetComponent< ICustomNormal >();
+        _customNormal = target.GetComponent< CustomNormal >();
     }
 #endregion
 

@@ -20,7 +20,7 @@ public class ActorNumber : MonoBehaviour, IActorNumber
 
 	Vector3 movement_target_direction;
 	Vector3 movement_target_position;
-	ICustomNormal movement_target;
+	CustomNormal movement_target;
 	int movement_ricochet_count;
 
 	[ ShowInInspector, ReadOnly ] int number_value;
@@ -203,7 +203,7 @@ public class ActorNumber : MonoBehaviour, IActorNumber
 		if( isHit )
 		{
 			movement_target_position = raycastHit.point;
-			movement_target          = raycastHit.collider.GetComponent< ICustomNormal >();
+			movement_target          = raycastHit.collider.GetComponent< CustomNormal >();
 			onFixedUpdate            = OnMovementTarget;
 		}
 		else
