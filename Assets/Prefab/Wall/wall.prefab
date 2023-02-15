@@ -252,7 +252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _boxCollider: {fileID: 1739976834390339487}
-  customNormal: {fileID: 4558724721042470670}
+  customNormal: {fileID: 6363605232949097305}
   _particleData:
     particle_event: {fileID: 11400000, guid: 63f54dda4e384e94f89b0d2b239cf0b5, type: 2}
     alias: wall_hit
