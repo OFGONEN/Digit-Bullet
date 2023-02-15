@@ -72,36 +72,6 @@ public class NumberDisplayer : MonoBehaviour
 #region Editor Only
 #if UNITY_EDITOR
 	[ Button() ]
-	public void BakeVisualActor( int value )
-	{
-		UnityEditor.SceneManagement.EditorSceneManager.MarkAllScenesDirty();
-
-		display_child.DestroyAllChildren();
-
-		value.ExtractDigits( digit_list );
-		float offset = 0;
-
-		DigitDisplayer number = null;
-
-		for( var i = 0; i < digit_list.Count; i++ )
-		{
-            number = ( PrefabUtility.InstantiatePrefab( 
-                AssetDatabase.LoadAssetAtPath< GameObject >( "Assets/Prefab/character.prefab" ) ) as GameObject ).GetComponent< DigitDisplayer >();
-			var numberData = library_number_display.GetNumberDisplayData( digit_list[ i ] );
-
-			number.transform.parent        = display_child;
-			number.transform.localPosition = Vector3.right * offset + Vector3.up * GameSettings.Instance.number_spawn_height;
-
-			offset += numberData.size + numberData.offset;
-
-			number.UpdateVisual( numberData.mesh, GameSettings.Instance.number_material_positive );
-		}
-
-		display_child.localPosition = Vector3.left * number.transform.localPosition.x / 2f;
-		CacheDigitDisplayers();
-	}
-
-	[ Button() ]
 	public void BakeVisualSymbol( int value )
 	{
 		UnityEditor.SceneManagement.EditorSceneManager.MarkAllScenesDirty();
@@ -119,8 +89,9 @@ public class NumberDisplayer : MonoBehaviour
 				AssetDatabase.LoadAssetAtPath< GameObject >( "Assets/Prefab/character.prefab" ) ) as GameObject ).GetComponent<DigitDisplayer>();
 			var numberData = library_number_display.GetNumberDisplayData( digit_list[ i ] );
 
-			number.transform.parent = display_child;
+			number.transform.parent        = display_child;
 			number.transform.localPosition = Vector3.right * offset + Vector3.up * GameSettings.Instance.number_spawn_height;
+			number.transform.localScale    = Vector3.one;
 
 			offset += numberData.size + numberData.offset;
 
@@ -132,7 +103,7 @@ public class NumberDisplayer : MonoBehaviour
 	}
 
 	[ Button() ]
-	public void BakeVisual( OperatorSymbol symbol, int value )
+	public void BakeVisualOperator( OperatorSymbol symbol, int value )
 	{
 		UnityEditor.SceneManagement.EditorSceneManager.MarkAllScenesDirty();
 
@@ -148,10 +119,11 @@ public class NumberDisplayer : MonoBehaviour
 
 		symbolDisplay.transform.parent = display_child;
 		symbolDisplay.transform.localPosition = Vector3.right * offset + Vector3.up * GameSettings.Instance.number_spawn_height;
+		symbolDisplay.transform.localScale = Vector3.one;
 
 		offset += symbolData.size + symbolData.offset;
 
-		symbolDisplay.UpdateVisual( symbolData.mesh, GameSettings.Instance.number_material_positive );
+		symbolDisplay.UpdateVisual( symbolData.mesh, GameSettings.Instance.number_operator_material_positive );
 
 		DigitDisplayer number = null;
 
@@ -163,10 +135,11 @@ public class NumberDisplayer : MonoBehaviour
 
 			number.transform.parent        = display_child;
 			number.transform.localPosition = Vector3.right * offset + Vector3.up * GameSettings.Instance.number_spawn_height;
+			number.transform.localScale = Vector3.one;
 
 			offset += numberData.size + numberData.offset;
 
-			number.UpdateVisual( numberData.mesh, GameSettings.Instance.number_material_positive );
+			number.UpdateVisual( numberData.mesh, GameSettings.Instance.number_operator_material_positive );
 		}
 
 		display_child.localPosition = Vector3.left * number.transform.localPosition.x / 2f;
