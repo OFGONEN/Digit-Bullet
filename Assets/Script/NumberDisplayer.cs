@@ -61,10 +61,8 @@ public class NumberDisplayer : MonoBehaviour
 
 	public void ChangeMaterial( Material material )
 	{
-		var rendererArray = display_child.GetComponentsInChildren< MeshRenderer >();
-
-		for( var i = 0; i < rendererArray.Length; i++ )
-			rendererArray[ i ].sharedMaterial = material;
+		for( var i = 0; i < digit_displayer_list.Count; i++ )
+			digit_displayer_list[ i ].UpdateMaterial( material );
 	}
 #endregion
 
@@ -100,6 +98,7 @@ public class NumberDisplayer : MonoBehaviour
 		}
 
 		display_child.localPosition = Vector3.left * number.transform.localPosition.x / 2f;
+		CacheDigitDisplayers();
 	}
 
 	[ Button() ]
@@ -125,12 +124,11 @@ public class NumberDisplayer : MonoBehaviour
 
 			offset += numberData.size + numberData.offset;
 
-			number.UpdateVisual( numberData.mesh, GameSettings.Instance.number_material_positive );
+			number.UpdateVisual( numberData.mesh, GameSettings.Instance.number_operator_material_positive );
 		}
 
 		display_child.localPosition = Vector3.left * number.transform.localPosition.x / 2f;
-
-		ChangeMaterial( GameSettings.Instance.number_operator_material_positive );
+		CacheDigitDisplayers();
 	}
 
 	[ Button() ]
@@ -172,6 +170,16 @@ public class NumberDisplayer : MonoBehaviour
 		}
 
 		display_child.localPosition = Vector3.left * number.transform.localPosition.x / 2f;
+		CacheDigitDisplayers();
+	}
+
+	void CacheDigitDisplayers()
+	{
+		UnityEditor.SceneManagement.EditorSceneManager.MarkAllScenesDirty();
+
+		digit_displayer_list = new List< DigitDisplayer >( display_child.childCount );
+		for( var i = 0; i < display_child.childCount; i++ )
+			digit_displayer_list.Add( display_child.GetChild( i ).GetComponent< DigitDisplayer >() );
 	}
 
 	[ Button() ]
