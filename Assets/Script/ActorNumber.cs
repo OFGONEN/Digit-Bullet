@@ -153,7 +153,9 @@ public class ActorNumber : MonoBehaviour, IActorNumber
 	void OnJumpBigComplete()
 	{
 		transform.localScale = Vector3.one;
-		//todo punch scale
+		DoPunchScale();
+
+		_numberDisplayer.ChangeMaterial( GameSettings.Instance.number_material_positive );
 	}
 
 	void OnMovementFree()
