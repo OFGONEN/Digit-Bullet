@@ -17,8 +17,8 @@ public class NumberDisplayer : MonoBehaviour
   [ Title( "Setup" ) ]
     [ SerializeField ] Transform display_child;
 
+    [ SerializeField, ReadOnly ] List< DigitDisplayer > digit_displayer_list = new List< DigitDisplayer >( 6 );
     [ ShowInInspector, ReadOnly ] List< int > digit_list = new List< int >( 6 );
-    [ ShowInInspector, ReadOnly ] List< DigitDisplayer > digit_displayer_list = new List< DigitDisplayer >( 6 );
 #endregion
 
 #region Properties
