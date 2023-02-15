@@ -97,13 +97,13 @@ public class ActorNumber : MonoBehaviour, IActorNumber
 
 	public void DoPunchScale()
 	{
-		transform.localScale = Vector3.one * size;
+		_numberDisplayer.transform.localScale = Vector3.one ;
 		recycledTween.Recycle( GameSettings.Instance.actor_scale_punch.CreateTween( _numberDisplayer.transform ) );
 	}
 
 	public void DoShakeScale()
 	{
-		transform.localScale = Vector3.one * size;
+		_numberDisplayer.transform.localScale = Vector3.one ;
 		recycledTween.Recycle( GameSettings.Instance.actor_scale_shake.CreateTween( _numberDisplayer.transform ) );
 	}
 // IActorNumber end
