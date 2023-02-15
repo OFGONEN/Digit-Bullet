@@ -138,6 +138,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2145952903997057017}
+        m_TargetAssemblyTypeName: DoPunchScale, Assembly-CSharp
+        m_MethodName: DoPunchScaleTween
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4158315085877592550
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,6 +160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4158315085877592549}
   - component: {fileID: 4158315085877592548}
+  - component: {fileID: 2145952903997057017}
   m_Layer: 30
   m_Name: target_number
   m_TagString: Untagged
@@ -191,6 +204,25 @@ MonoBehaviour:
   event_target_number_appear: {fileID: 11400000, guid: 0cf126b754cafc448bc95328725be813, type: 2}
   event_target_number_disappear: {fileID: 11400000, guid: cfb90616259327f48a52df09501da4df, type: 2}
   _numberDisplayer: {fileID: 7075033578040945782}
+--- !u!114 &2145952903997057017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4158315085877592550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21f9b8467f6e41a468ac1436e7b3c13b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  punchScaleTween:
+    strength: {x: 0.2, y: 0.2, z: 0.2}
+    duration: 1
+    vibrato: 10
+    elasticity: 1
+    ease: 12
+  target: {fileID: 3223585429859228413}
 --- !u!1 &6139927023018439606
 GameObject:
   m_ObjectHideFlags: 0
