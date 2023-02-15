@@ -56,6 +56,16 @@ namespace FFStudio
 	}
 
 	[ Serializable ]
+	public struct ParticleDataForward
+	{
+		public ParticleSpawnForward particle_event;
+		public string alias;
+		public bool parent;
+		public Vector3 offset;
+		public float size;
+	}
+
+	[ Serializable ]
 	public struct PopUpTextData
 	{
 		public string text;
