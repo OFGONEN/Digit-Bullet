@@ -13,7 +13,6 @@ public class ActorNumber : MonoBehaviour, IActorNumber
 #region Fields
   [ Title( "Shared" ) ]
 	[ SerializeField ] PoolActorNumber pool_number_actor;
-	[ SerializeField ] ParticleSpawnEvent event_particle_spawn;
 
   [ Title( "Components" ) ]
 	[ SerializeField ] Rigidbody _rigidbody;
@@ -63,8 +62,6 @@ public class ActorNumber : MonoBehaviour, IActorNumber
 	{
 		number_value += value;
 		_numberDisplayer.UpdateVisual( number_value, GameSettings.Instance.number_material_positive );
-
-		event_particle_spawn.Raise( "upgrade", transform.position, transform );
 	}
 
 	public void Substract( int value )
@@ -77,8 +74,6 @@ public class ActorNumber : MonoBehaviour, IActorNumber
 	{
 		number_value *= value;
 		_numberDisplayer.UpdateVisual( number_value, GameSettings.Instance.number_material_positive );
-
-		event_particle_spawn.Raise( "upgrade", transform.position, transform );
 	}
 
 	public void Divide( int value )

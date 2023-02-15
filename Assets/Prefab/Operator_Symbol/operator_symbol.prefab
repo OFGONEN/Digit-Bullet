@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 1029865624504022645}
   - component: {fileID: 981120267581516563}
   - component: {fileID: 3829436962143943538}
+  - component: {fileID: 3918672269162348120}
   m_Layer: 30
   m_Name: operator_symbol
   m_TagString: Untagged
@@ -135,6 +136,25 @@ MonoBehaviour:
               m_CallState: 2
         wave_radius: 0.15
         wave_speed: 0.1
+--- !u!114 &3918672269162348120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7798430375086195127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4e828250151b2749b911f18565ef428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _particleData:
+    particle_event: {fileID: 11400000, guid: fe240f220ab36cc44923227184f9c2a7, type: 2}
+    alias: upgrade
+    parent: 1
+    offset: {x: 0, y: 0, z: 0}
+    size: 1
+    keepParentRotation: 1
 --- !u!1 &8837929952958308686
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,6 +329,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: ActorNumberInterface, Assembly-CSharp
         m_MethodName: DoPunchScale
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3918672269162348120}
+        m_TargetAssemblyTypeName: ParticleSpawnOnTrigger, Assembly-CSharp
+        m_MethodName: OnTrigger
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
