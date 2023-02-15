@@ -26,12 +26,14 @@ public class DoPunchScale : MonoBehaviour
 #endregion
 
 #region API
+	[ Button() ]
     public void DoPunchScaleTween( Vector3 strength )
     {
 		target.localScale = scale;
 		punchScaleTween.CreateTween( target, strength );
 	}
 
+	[ Button() ]
 	public void DoPunchScaleTween()
 	{
 		target.localScale = scale;

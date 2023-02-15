@@ -160,7 +160,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4484114986522330020, guid: f237f69a8211443c1b0952ac89c7369b, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4484114986522330020, guid: f237f69a8211443c1b0952ac89c7369b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -205,6 +205,10 @@ PrefabInstance:
     - target: {fileID: 6649987736687670374, guid: f237f69a8211443c1b0952ac89c7369b, type: 3}
       propertyPath: m_Name
       value: operator_wall_sphere_add
+      objectReference: {fileID: 0}
+    - target: {fileID: 6795637689630250046, guid: f237f69a8211443c1b0952ac89c7369b, type: 3}
+      propertyPath: unityEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_IntArgument
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7600904839709157188, guid: f237f69a8211443c1b0952ac89c7369b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -576,7 +580,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4708317982358262950, guid: bb581058a3431334db43222d09934665, type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4708317982358262950, guid: bb581058a3431334db43222d09934665, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1002,7 +1006,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &923905489
 PrefabInstance:
@@ -1033,7 +1037,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8875208860745770621, guid: 83836cc0838d644e4a622805ab2c995e, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 8875208860745770621, guid: 83836cc0838d644e4a622805ab2c995e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1221,7 +1225,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8875208860745770621, guid: 83836cc0838d644e4a622805ab2c995e, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 8875208860745770621, guid: 83836cc0838d644e4a622805ab2c995e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1436,7 +1440,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1348756871
 PrefabInstance:
@@ -1775,7 +1779,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4169514725511649137, guid: 746e70671031daf43b83eec5f9c20784, type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 4169514725511649137, guid: 746e70671031daf43b83eec5f9c20784, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2120,7 +2124,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1964970050
 PrefabInstance:
