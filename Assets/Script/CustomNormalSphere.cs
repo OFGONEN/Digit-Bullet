@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEditor;
 using FFStudio;
 
-public class CustomNormalSphere : MonoBehaviour, ICustomNormal
+public class CustomNormalSphere : CustomNormal
 {
 #region Fields
     [ SerializeField ] Vector3 pivot;
@@ -25,7 +25,7 @@ public class CustomNormalSphere : MonoBehaviour, ICustomNormal
 #endregion
 
 #region API
-    public Vector3 GetNormal( Vector3 contactPoint )
+    public override Vector3 GetNormal( Vector3 contactPoint )
     {
 		return ( contactPoint - pivot_world ).normalized;
 	}

@@ -7,7 +7,7 @@ using UnityEditor;
 using FFStudio;
 using Sirenix.OdinInspector;
 
-public class CustomNormalSquare : MonoBehaviour, ICustomNormal
+public class CustomNormalSquare : CustomNormal
 {
 #region Fields
     [ LabelText( "Box Collider" ), SerializeField ] BoxCollider _boxCollider;
@@ -26,7 +26,7 @@ public class CustomNormalSquare : MonoBehaviour, ICustomNormal
 #endregion
 
 #region API
-	public Vector3 GetNormal( Vector3 contactPoint )
+	public override Vector3 GetNormal( Vector3 contactPoint )
     {
 		Vector3 normal = Vector3.up;
 
