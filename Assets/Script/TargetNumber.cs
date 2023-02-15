@@ -16,6 +16,7 @@ public class TargetNumber : MonoBehaviour
   [ Title( "Shared" ) ]
     [ SerializeField ] GameEvent event_target_number_appear;
     [ SerializeField ] GameEvent event_target_number_disappear;
+    [ SerializeField ] ParticleSpawnEvent event_particle_spawn;
 
   [ Title( "Components" ) ]
 	[ SerializeField ] NumberDisplayer _numberDisplayer;
@@ -46,7 +47,10 @@ public class TargetNumber : MonoBehaviour
 
 
 		if( target_number <= 0 )
+		{
+			event_particle_spawn.Raise( "target_complete", transform.position );
 			Disappear();
+		}
 		else
 			_numberDisplayer.UpdateVisual( target_number, GameSettings.Instance.number_target_material );
 

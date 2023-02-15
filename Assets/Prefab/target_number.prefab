@@ -235,6 +235,7 @@ MonoBehaviour:
   target_number: 10
   event_target_number_appear: {fileID: 11400000, guid: 0cf126b754cafc448bc95328725be813, type: 2}
   event_target_number_disappear: {fileID: 11400000, guid: cfb90616259327f48a52df09501da4df, type: 2}
+  event_particle_spawn: {fileID: 11400000, guid: fe240f220ab36cc44923227184f9c2a7, type: 2}
   _numberDisplayer: {fileID: 7075033578040945782}
   parent_disable: {fileID: 2725267877189860407}
 --- !u!114 &2145952903997057017
