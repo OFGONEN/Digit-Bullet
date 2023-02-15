@@ -167,7 +167,7 @@ MonoBehaviour:
   customNormal: {fileID: 4558724721042470670}
   _particleData:
     particle_event: {fileID: 11400000, guid: 63f54dda4e384e94f89b0d2b239cf0b5, type: 2}
-    alias: wall_hit
+    alias: wall_hit_upgrade
     parent: 0
     offset: {x: 0, y: 0, z: 0}
     size: 1

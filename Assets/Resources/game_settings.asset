@@ -39,6 +39,7 @@ MonoBehaviour:
   number_target_material: {fileID: 2100000, guid: f0d90b8c2f3836e4b9cf097f23eca386, type: 2}
   number_spawn_height: 0.1
   trajectory_line_length: 10
+  trajectory_crosshair_offset: -0.45
   trajectory_layer: 29
   camera_follow_speed_depth: 2.8
   maxLevelCount: 10

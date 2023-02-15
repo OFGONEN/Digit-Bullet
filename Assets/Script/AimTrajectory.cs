@@ -15,6 +15,7 @@ public class AimTrajectory : MonoBehaviour
 
   [ Title( "Components" ) ]
     [ SerializeField ] LineRenderer _lineRenderer;
+    [ SerializeField ] Transform _crosshair;
 
     Camera _camera;
 	int layerMask;
@@ -57,7 +58,9 @@ public class AimTrajectory : MonoBehaviour
     public void StartAim()
     {
 		point_list.Clear();
+
 		_lineRenderer.enabled = true;
+		_crosshair.gameObject.SetActive( true );
 
 		onUpdate = OnAim;
 	}
@@ -65,7 +68,9 @@ public class AimTrajectory : MonoBehaviour
     public void StopAim()
     {
 		onUpdate = Extensions.EmptyMethod;
+
 		_lineRenderer.enabled = false;
+		_crosshair.gameObject.SetActive( false );
 	}
 #endregion
 
@@ -109,6 +114,9 @@ public class AimTrajectory : MonoBehaviour
 
         if( !isHit )
 		    point_list.Add( point_list.GetLastItem() + castDirection * GameSettings.Instance.trajectory_line_length );
+		
+		if( point_list.Count > 2 )
+			_crosshair.position = point_list[ 1 ] + GameSettings.Instance.trajectory_crosshair_offset * AimDirection;
 
 		SetLineRendererPoints();
 	}

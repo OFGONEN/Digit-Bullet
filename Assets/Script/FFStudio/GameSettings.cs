@@ -33,6 +33,7 @@ namespace FFStudio
 
     [ Title( "Trajectory" ) ]
 		[ LabelText( "Trajectory Single Line Max Length" ) ] public float trajectory_line_length;
+		[ LabelText( "Trajectory Crosshair offset" ) ] public float trajectory_crosshair_offset;
 		[ LabelText( "Trajectory Raycast Layer" ), Layer() ] public int trajectory_layer;
     
     [ Title( "Camera" ) ]
