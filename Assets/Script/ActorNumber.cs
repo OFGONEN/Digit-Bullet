@@ -25,6 +25,7 @@ public class ActorNumber : MonoBehaviour, IActorNumber
 
 	[ ShowInInspector, ReadOnly ] int number_value;
 	int layerMask;
+	float size;
 
 	RecycledTween recycledTween = new RecycledTween();
 
@@ -96,11 +97,13 @@ public class ActorNumber : MonoBehaviour, IActorNumber
 
 	public void DoPunchScale()
 	{
+		transform.localScale = Vector3.one * size;
 		recycledTween.Recycle( GameSettings.Instance.actor_scale_punch.CreateTween( _numberDisplayer.transform ) );
 	}
 
 	public void DoShakeScale()
 	{
+		transform.localScale = Vector3.one * size;
 		recycledTween.Recycle( GameSettings.Instance.actor_scale_shake.CreateTween( _numberDisplayer.transform ) );
 	}
 // IActorNumber end
@@ -110,6 +113,7 @@ public class ActorNumber : MonoBehaviour, IActorNumber
 
 		transform.position   = position;
 		transform.localScale = Vector3.one * size;
+		this.size            = size;
 
 		number_value = value;
 
