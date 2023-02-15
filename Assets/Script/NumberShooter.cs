@@ -11,7 +11,7 @@ public class NumberShooter : MonoBehaviour
 #region Fields
   [ Title( "Shared" ) ]
     [ SerializeField ] PoolActorNumber pool_number_actor;
-    [ SerializeField ] GameEvent event_level_failed;
+    [ SerializeField ] GameEvent event_actor_disappeared;
 
   [ Title( "Components" ) ]
     [ SerializeField ] AimTrajectory _aimTrajectory;
@@ -122,7 +122,7 @@ public class NumberShooter : MonoBehaviour
 			number_list[ 0 ].JumpBig( position, OnJumpBigComplete );
 		}
 		else
-			number_current.StartMovement( _aimTrajectory.AimDirection, event_level_failed.Raise );
+			number_current.StartMovement( _aimTrajectory.AimDirection, event_actor_disappeared.Raise );
 	}
 
 	void OnJumpBigComplete()

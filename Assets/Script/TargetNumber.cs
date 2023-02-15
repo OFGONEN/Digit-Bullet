@@ -43,12 +43,13 @@ public class TargetNumber : MonoBehaviour
 
 		target_number -= actorNumber.NumberValue;
 
-		actorNumber.OnTargetNumberTrigger();
 
 		if( target_number <= 0 )
 			Disappear();
 		else
 			_numberDisplayer.UpdateVisual( target_number, GameSettings.Instance.number_target_material );
+
+		actorNumber.OnTargetNumberTrigger();
 	}
 #endregion
 

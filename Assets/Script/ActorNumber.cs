@@ -85,6 +85,7 @@ public class ActorNumber : MonoBehaviour, IActorNumber
 	public void OnTargetNumberTrigger()
 	{
 		pool_number_actor.ReturnEntity( this );
+		onDisappear?.Invoke();
 	}
 
 	public void OnSafetyNetTrigger() 
