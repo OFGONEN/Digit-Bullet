@@ -124,7 +124,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1029865624504022645}
-  - component: {fileID: 981120267581516563}
+  - component: {fileID: 403925632284867808}
   m_Layer: 29
   m_Name: wall
   m_TagString: Untagged
@@ -149,7 +149,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &981120267581516563
+--- !u!114 &403925632284867808
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,16 +158,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 7798430375086195127}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f753b2c2b78147c181c65650f11a67d, type: 3}
+  m_Script: {fileID: 11500000, guid: 58070d15744340a4fb2eb4b40710adce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particleDatas:
-  - particle_event: {fileID: 11400000, guid: fe240f220ab36cc44923227184f9c2a7, type: 2}
-    alias: operator_symbol
+  _boxCollider: {fileID: 6744587407403196060}
+  customNormal: {fileID: 4558724721042470670}
+  _particleData:
+    particle_event: {fileID: 11400000, guid: 63f54dda4e384e94f89b0d2b239cf0b5, type: 2}
+    alias: wall_hit
     parent: 0
     offset: {x: 0, y: 0, z: 0}
     size: 1
-    keepParentRotation: 0
 --- !u!1 &8837929952958308686
 GameObject:
   m_ObjectHideFlags: 0
