@@ -30,7 +30,12 @@ public class DigitDisplayer : MonoBehaviour
 		_meshRenderer.material = material;
 	}
 
-    public void ReturnToPool()
+	public void UpdateMaterial( Material material )
+	{
+		_meshRenderer.material = material;
+	}
+
+	public void ReturnToPool()
     {
 		pool_digit_displayer.ReturnEntity( this );
 	}
