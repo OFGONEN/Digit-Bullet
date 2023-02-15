@@ -59,7 +59,7 @@ Transform:
   m_GameObject: {fileID: 7798430375086195127}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7166967002503233859}
@@ -279,8 +279,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 981120267581516563}
         m_TargetAssemblyTypeName: FFStudio.ParticleSpawner, Assembly-CSharp
-        m_MethodName: Spawn
-        m_Mode: 3
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -361,18 +361,6 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5659945377827221853, guid: 08756b9fbb52d78499fb57687fdb2fc4, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 5659945377827221853, guid: 08756b9fbb52d78499fb57687fdb2fc4, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 5659945377827221853, guid: 08756b9fbb52d78499fb57687fdb2fc4, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 5659945377827221853, guid: 08756b9fbb52d78499fb57687fdb2fc4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -411,10 +399,6 @@ PrefabInstance:
     - target: {fileID: 5659945377827221853, guid: 08756b9fbb52d78499fb57687fdb2fc4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5659945377827221853, guid: 08756b9fbb52d78499fb57687fdb2fc4, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8219781498878066268, guid: 08756b9fbb52d78499fb57687fdb2fc4, type: 3}
       propertyPath: m_Name
