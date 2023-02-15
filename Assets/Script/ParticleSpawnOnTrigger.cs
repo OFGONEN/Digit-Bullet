@@ -8,7 +8,6 @@ using FFStudio;
 public class ParticleSpawnOnTrigger : MonoBehaviour
 {
 #region Fields
-    [ SerializeField ] Collider _collider;
     [ SerializeField ] ParticleData _particleData;
 #endregion
 
@@ -19,14 +18,23 @@ public class ParticleSpawnOnTrigger : MonoBehaviour
 #endregion
 
 #region API
+    // public void OnTrigger( Collider collider )
+    // {
+	// 	var point = _collider.ClosestPoint( collider.transform.position );
+
+	// 	Transform parent = _particleData.parent ? transform : null;
+	// 	var       offset = _particleData.keepParentRotation ? transform.TransformVector( _particleData.offset ) : _particleData.offset;
+
+	// 	_particleData.particle_event.Raise( _particleData.alias, point + offset, parent, _particleData.size, _particleData.keepParentRotation );
+	// }
+
     public void OnTrigger( Collider collider )
     {
-		var point = _collider.ClosestPoint( collider.transform.position );
+		var target = collider.transform;
+		Transform parent = _particleData.parent ? target : null;
+		var       offset = _particleData.keepParentRotation ? target.TransformVector( _particleData.offset ) : _particleData.offset;
 
-		Transform parent = _particleData.parent ? transform : null;
-		var       offset = _particleData.keepParentRotation ? transform.TransformVector( _particleData.offset ) : _particleData.offset;
-
-		_particleData.particle_event.Raise( _particleData.alias, point + offset, parent, _particleData.size, _particleData.keepParentRotation );
+		_particleData.particle_event.Raise( _particleData.alias, target.position + offset, parent, _particleData.size, _particleData.keepParentRotation );
 	}
 #endregion
 
