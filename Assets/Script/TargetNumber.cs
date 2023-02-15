@@ -19,6 +19,7 @@ public class TargetNumber : MonoBehaviour
 
   [ Title( "Components" ) ]
 	[ SerializeField ] NumberDisplayer _numberDisplayer;
+	[ SerializeField ] Transform parent_disable;
 #endregion
 
 #region Properties
@@ -56,7 +57,7 @@ public class TargetNumber : MonoBehaviour
 #region Implementation
     void Disappear()
     {
-		gameObject.SetActive( false );
+		parent_disable.gameObject.SetActive( false );
 		event_target_number_disappear.Raise();
 	}
 #endregion

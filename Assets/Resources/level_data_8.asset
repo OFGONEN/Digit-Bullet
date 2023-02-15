@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene_index: 8
   scene_overrideAsActiveScene: 0
-  trajectory_point_count: 5
+  trajectory_point_count: 2
   number_ricochet_count: 20
   number_array: 020000000200000002000000010000000100000001000000
   number_array_spawn_offset: {x: -0.75, y: -0.1, z: 0}
