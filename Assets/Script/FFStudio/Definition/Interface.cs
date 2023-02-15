@@ -17,11 +17,6 @@ namespace FFStudio
 		void OverriteFromJSON( string json );
 	}
 
-	public interface ICustomNormal
-	{
-		Vector3 GetNormal( Vector3 contactPoint );
-	}
-
 	public interface IActorNumber
 	{
 		void Add( int value );
