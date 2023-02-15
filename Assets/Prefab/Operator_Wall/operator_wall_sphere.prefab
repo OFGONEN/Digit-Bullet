@@ -293,8 +293,8 @@ MonoBehaviour:
   unityEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ParticleSpawnOnTrigger, Assembly-CSharp
+      - m_Target: {fileID: 4392153489012362522}
+        m_TargetAssemblyTypeName: ParticleSpawnOnContactPoint, Assembly-CSharp
         m_MethodName: OnTrigger
         m_Mode: 0
         m_Arguments:

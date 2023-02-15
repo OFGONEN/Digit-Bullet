@@ -167,7 +167,7 @@ MonoBehaviour:
   customNormal: {fileID: 4558724721042470670}
   _particleData:
     particle_event: {fileID: 11400000, guid: 63f54dda4e384e94f89b0d2b239cf0b5, type: 2}
-    alias: wall_hit_upgrade
+    alias: wall_hit
     parent: 0
     offset: {x: 0, y: 0, z: 0}
     size: 1
@@ -293,8 +293,8 @@ MonoBehaviour:
   unityEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ParticleSpawnOnTrigger, Assembly-CSharp
+      - m_Target: {fileID: 559615234293598027}
+        m_TargetAssemblyTypeName: ParticleSpawnOnContactPoint, Assembly-CSharp
         m_MethodName: OnTrigger
         m_Mode: 0
         m_Arguments:
