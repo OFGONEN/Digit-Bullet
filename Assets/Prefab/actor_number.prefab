@@ -109,6 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pool_number_actor: {fileID: 11400000, guid: 47c5f73274ce26347b24ff0112afc815, type: 2}
+  event_particle_spawn: {fileID: 11400000, guid: fe240f220ab36cc44923227184f9c2a7, type: 2}
   _rigidbody: {fileID: 4295857064801465328}
   _numberDisplayer: {fileID: 41146454750818017}
 --- !u!54 &4295857064801465328
