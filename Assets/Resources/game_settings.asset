@@ -34,8 +34,8 @@ MonoBehaviour:
   actor_jump_small_duration: 0.45
   actor_jump_small_ease: 12
   number_material_positive: {fileID: 2100000, guid: 8dd91d421fca9ad448fd5f8a2c6ec374, type: 2}
-  number_waiting_material_positive: {fileID: 2100000, guid: f0d90b8c2f3836e4b9cf097f23eca386, type: 2}
-  number_operator_material_positive: {fileID: 2100000, guid: 8dd91d421fca9ad448fd5f8a2c6ec374, type: 2}
+  number_waiting_material_positive: {fileID: 2100000, guid: 6579bfc6511b7434b83a6c089c38ac06, type: 2}
+  number_operator_material_positive: {fileID: 2100000, guid: e4cc823f2a385e8428fa5089a3758513, type: 2}
   number_target_material: {fileID: 2100000, guid: f0d90b8c2f3836e4b9cf097f23eca386, type: 2}
   number_spawn_height: 0.1
   trajectory_line_length: 10
