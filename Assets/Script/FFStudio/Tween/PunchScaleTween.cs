@@ -18,4 +18,10 @@ public class PunchScaleTween
         return transform.DOPunchScale( strength, duration, vibrato, elasticity )
                         .SetEase( ease );
     }
+
+	public Tweener CreateTween( Transform transform, Vector3 strength )
+	{
+		return transform.DOPunchScale( strength, duration, vibrato, elasticity )
+						.SetEase( ease );
+	}
 }
