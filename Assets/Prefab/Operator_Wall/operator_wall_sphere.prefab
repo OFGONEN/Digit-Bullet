@@ -124,7 +124,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1029865624504022645}
-  - component: {fileID: 1639771293308092627}
   m_Layer: 30
   m_Name: operator_wall_sphere
   m_TagString: Untagged
@@ -151,26 +150,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1639771293308092627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7798430375086195127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4e828250151b2749b911f18565ef428, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _collider: {fileID: 5776558455811546185}
-  _particleData:
-    particle_event: {fileID: 11400000, guid: fe240f220ab36cc44923227184f9c2a7, type: 2}
-    alias: operator_wall
-    parent: 0
-    offset: {x: 0, y: 0, z: 0}
-    size: 1
-    keepParentRotation: 0
 --- !u!1 &8837929952958308686
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,7 +272,7 @@ MonoBehaviour:
   unityEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1639771293308092627}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ParticleSpawnOnTrigger, Assembly-CSharp
         m_MethodName: OnTrigger
         m_Mode: 0
