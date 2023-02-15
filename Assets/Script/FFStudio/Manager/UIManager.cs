@@ -67,7 +67,7 @@ namespace FFStudio
 			var sequence = DOTween.Sequence()
 								.Append( level_loadingBar_Scale.DoScale_Target( Vector3.zero, GameSettings.Instance.ui_Entity_Scale_TweenDuration ) )
 								.Append( loadingScreenImage.DOFade( 0, GameSettings.Instance.ui_Entity_Fade_TweenDuration ) )
-								.AppendCallback( StartLevel );
+								.AppendCallback( () => tapInputListener.response = StartLevel );
 
 			level_count_text.text = "LEVEL " + CurrentLevelData.Instance.currentLevel_Shown;
 
