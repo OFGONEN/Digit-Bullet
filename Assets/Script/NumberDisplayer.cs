@@ -57,6 +57,15 @@ public class NumberDisplayer : MonoBehaviour
 
 		display_child.localPosition = Vector3.left * number.transform.localPosition.x / 2f;	
     }
+
+
+	public void ChangeMaterial( Material material )
+	{
+		var rendererArray = display_child.GetComponentsInChildren< MeshRenderer >();
+
+		for( var i = 0; i < rendererArray.Length; i++ )
+			rendererArray[ i ].sharedMaterial = material;
+	}
 #endregion
 
 #region Implementation
@@ -166,7 +175,7 @@ public class NumberDisplayer : MonoBehaviour
 	}
 
 	[ Button() ]
-	public void ChangeMaterial( Material material )
+	public void ChangeMaterialEditor( Material material )
 	{
 		UnityEditor.SceneManagement.EditorSceneManager.MarkAllScenesDirty();
 
