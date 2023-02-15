@@ -117,6 +117,8 @@ public class AimTrajectory : MonoBehaviour
 		
 		if( point_list.Count > 2 )
 			_crosshair.position = point_list[ 1 ] + GameSettings.Instance.trajectory_crosshair_offset * AimDirection;
+		else
+			_crosshair.position = finger_position;
 
 		SetLineRendererPoints();
 	}
