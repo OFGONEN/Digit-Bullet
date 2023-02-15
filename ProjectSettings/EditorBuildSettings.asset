@@ -9,33 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/app.unity
     guid: ad0d37aebbbd4c54396618f1c151ebb7
   - enabled: 1
-    path: Assets/Scenes/game_1.unity
-    guid: acca28cec556a9f42ac66b21d53a1156
-  - enabled: 1
-    path: Assets/Scenes/game_2.unity
-    guid: b698d5ef6fe6a1846a4bb41a954757ff
-  - enabled: 1
-    path: Assets/Scenes/game_3.unity
-    guid: 25a72b297ae930148900853b348419df
-  - enabled: 1
-    path: Assets/Scenes/game_4.unity
-    guid: 9c19eb2a9aa68174ab1d7815e43ddbce
-  - enabled: 1
-    path: Assets/Scenes/game_5.unity
-    guid: f9013f59ccaf20946af4022d96acd765
-  - enabled: 1
-    path: Assets/Scenes/game_6.unity
-    guid: cb189ad95acae7e46b0411ea9da69087
-  - enabled: 1
-    path: Assets/Scenes/game_7.unity
-    guid: 730d870eb5d0d7041b7cc98cf5e8b61a
-  - enabled: 1
-    path: Assets/Scenes/game_8.unity
-    guid: b66581118afcc5f4fa5ff1ec1e8a760c
-  - enabled: 1
-    path: Assets/Scenes/game_9.unity
-    guid: f801ece928e40d044bb810ff2211ac7f
-  - enabled: 1
-    path: Assets/Scenes/game_10.unity
-    guid: 303d58eeba71fe7479a3243e269a1122
+    path: Assets/Scenes/game_template.unity
+    guid: c7e03bd5129fc4c36ac54c6e26a7669b
   m_configObjects: {}

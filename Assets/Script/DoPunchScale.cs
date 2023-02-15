@@ -12,13 +12,19 @@ public class DoPunchScale : MonoBehaviour
     [ SerializeField ] PunchScaleTween punchScaleTween;
     [ SerializeField ] Transform target;
 
-    Vector3 scale;
+	RecycledTween recycledTween = new RecycledTween();
+	Vector3 scale;
 #endregion
 
 #region Properties
 #endregion
 
 #region Unity API
+	private void OnDisable()
+	{
+		recycledTween.Kill();
+	}
+
     private void Awake()
     {
 		scale = transform.localScale;
@@ -26,16 +32,18 @@ public class DoPunchScale : MonoBehaviour
 #endregion
 
 #region API
+	[ Button() ]
     public void DoPunchScaleTween( Vector3 strength )
     {
 		target.localScale = scale;
-		punchScaleTween.CreateTween( target, strength );
+		recycledTween.Recycle( punchScaleTween.CreateTween( target, strength ) );
 	}
 
+	[ Button() ]
 	public void DoPunchScaleTween()
 	{
 		target.localScale = scale;
-		punchScaleTween.CreateTween( target );
+		recycledTween.Recycle( punchScaleTween.CreateTween( target ) );
 	}
 #endregion
 
