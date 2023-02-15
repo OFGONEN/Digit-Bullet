@@ -17,8 +17,8 @@ public class AimTrajectory : MonoBehaviour
     [ SerializeField ] LineRenderer _lineRenderer;
 
     Camera _camera;
-	Vector3 position;
 	int layerMask;
+	Transform parent;
 	[ ShowInInspector, ReadOnly ] List< Vector3 > point_list;
 	[ ShowInInspector, ReadOnly ] int point_count;
 
@@ -27,7 +27,7 @@ public class AimTrajectory : MonoBehaviour
 #endregion
 
 #region Properties
-	public Vector3 AimDirection => ( finger_position - position ).normalized ;
+	public Vector3 AimDirection => ( finger_position - parent.position ).normalized ;
 #endregion
 
 #region Unity API
@@ -35,8 +35,8 @@ public class AimTrajectory : MonoBehaviour
     {
 		EmptyDelegates();
 
+		parent                      = transform.parent;
 		point_count                 = CurrentLevelData.Instance.levelData.trajectory_point_count + 1;  // Start and End points
-		position                    = transform.position;
 		layerMask                   = 1 << GameSettings.Instance.trajectory_layer;
 		point_list                  = new List< Vector3 >( point_count );
 		_lineRenderer.positionCount = point_count;
@@ -72,13 +72,15 @@ public class AimTrajectory : MonoBehaviour
 #region Implementation
     void OnAim()
     {
-		point_list.Clear();
-		point_list.Add( position );
-
 		finger_position = _camera.ScreenToWorldPoint( shared_finger_position.sharedValue
 			.ConvertToVector3_Z( Mathf.Abs( _camera.transform.position.z ) ) );
 
-		var castOrigin    = position;
+		parent.right = AimDirection;
+
+		point_list.Clear();
+		point_list.Add( transform.position );
+
+		var castOrigin    = parent.position;
 		var castDirection = ( finger_position - castOrigin ).normalized;
 
 		RaycastHit hit;
