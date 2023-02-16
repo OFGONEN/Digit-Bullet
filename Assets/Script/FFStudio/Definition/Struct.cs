@@ -52,6 +52,17 @@ namespace FFStudio
 		public bool parent;
 		public Vector3 offset;
 		public float size;
+		public bool keepParentRotation;
+	}
+
+	[ Serializable ]
+	public struct ParticleDataForward
+	{
+		public ParticleSpawnForward particle_event;
+		public string alias;
+		public bool parent;
+		public Vector3 offset;
+		public float size;
 	}
 
 	[ Serializable ]

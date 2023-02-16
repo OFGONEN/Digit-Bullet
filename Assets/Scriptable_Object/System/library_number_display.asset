@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eced9bbb1abf8d41b773fdf4ca0dbf9, type: 3}
+  m_Name: library_number_display
+  m_EditorClassIdentifier: 
+  number_display_data_array:
+  - mesh: {fileID: 8123367752247383479, guid: a828b0cdac6124a48b741fd890de61c3, type: 3}
+    size: 0.6
+    offset: 0.1
+  - mesh: {fileID: 7305014285589122363, guid: e2ebf6e2632a35e4ba7dbed079639923, type: 3}
+    size: 0.6
+    offset: 0.1
+  - mesh: {fileID: -2709860591718319364, guid: 56b96f7cb36fe0545a940d59f82bedbe, type: 3}
+    size: 0.6
+    offset: 0.1
+  - mesh: {fileID: -5380217069453521601, guid: 7cd5985a45f9ae34090ff9730f595dea, type: 3}
+    size: 0.6
+    offset: 0.1
+  - mesh: {fileID: 2852897954641953051, guid: 54001f5357d15604f962f63ac6923609, type: 3}
+    size: 0.6
+    offset: 0.1
+  - mesh: {fileID: 1991052341144931230, guid: 2244c3efe30618a44b9faecd9e5977e9, type: 3}
+    size: 0.6
+    offset: 0.1
+  - mesh: {fileID: 3376104058510400480, guid: 4183aac4b3b121946bb80bd3a979c97e, type: 3}
+    size: 0.6
+    offset: 0.1
+  - mesh: {fileID: 6354407863535204677, guid: b43fa2ec20d208e4f9d588c4de64da31, type: 3}
+    size: 0.6
+    offset: 0.1
+  - mesh: {fileID: -2577638297741320584, guid: 4434e0be66dbfca4d94a60f980cfe183, type: 3}
+    size: 0.6
+    offset: 0.1
+  - mesh: {fileID: -694613739036353393, guid: f2e956cc92bd1414ab4c56f66b7900d3, type: 3}
+    size: 0.6
+    offset: 0.1
+  number_operator_display_data_array:
+  - mesh: {fileID: -6872496273713061248, guid: 5ac87ef050637a34f9e380954a7fa4af, type: 3}
+    size: 0.5
+    offset: 0.1
+  - mesh: {fileID: 6183308854717502462, guid: 0b8000cef21691941bba890f08bcdce2, type: 3}
+    size: 0.5
+    offset: 0.1
+  - mesh: {fileID: 1327211751346578542, guid: 48cc7aa50bc95354f825b0a4edbef422, type: 3}
+    size: 0.5
+    offset: 0.1
+  - mesh: {fileID: 549306845398497072, guid: e634b8c825f927d4aa15a3ce324c91de, type: 3}
+    size: 0.5
+    offset: 0.1

@@ -55,7 +55,7 @@ namespace FFStudio
             levelLoadedResponse.response   = InitialLevelLoad;
             levelFailResponse.response     = LevelFailResponse;
             levelCompleteResponse.response = LevelCompleteResponse;
-            tapInputListener.response      = ExtensionMethods.EmptyMethod;
+            tapInputListener.response      = Extensions.EmptyMethod;
 
 			level_information_text.text = "TAP TO START";
         }
@@ -87,11 +87,7 @@ namespace FFStudio
 			sequence.Append( foreGroundImage.DOFade( 0.0f, GameSettings.Instance.ui_Entity_Fade_TweenDuration ) )
 					// .Append( tween ) // TODO: UIElements tween.
 					.Append( level_information_text_Scale.DoScale_Start( GameSettings.Instance.ui_Entity_Scale_TweenDuration ) )
-					.AppendCallback( () => tapInputListener.response = StartLevel );
-
-            // elephantLevelEvent.level             = CurrentLevelData.Instance.currentLevel_Shown;
-            // elephantLevelEvent.elephantEventType = ElephantEvent.LevelStarted;
-            // elephantLevelEvent.Raise();
+					.AppendCallback( StartLevel );
         }
 
         private void LevelCompleteResponse()
@@ -133,12 +129,13 @@ namespace FFStudio
 		{
 			foreGroundImage.DOFade( 0, GameSettings.Instance.ui_Entity_Fade_TweenDuration );
 
-			level_information_text_Scale.DoScale_Target( Vector3.zero, GameSettings.Instance.ui_Entity_Scale_TweenDuration );
-			level_information_text_Scale.Subscribe_OnComplete( levelRevealedEvent.Raise );
+			levelRevealedEvent.Raise();
+			// level_information_text_Scale.DoScale_Target( Vector3.zero, GameSettings.Instance.ui_Entity_Scale_TweenDuration );
+			// level_information_text_Scale.Subscribe_OnComplete( levelRevealedEvent.Raise );
 
 			tutorialObjects.gameObject.SetActive( false );
 
-			tapInputListener.response = ExtensionMethods.EmptyMethod;
+			tapInputListener.response = Extensions.EmptyMethod;
 
 			elephantLevelEvent.level             = CurrentLevelData.Instance.currentLevel_Shown;
 			elephantLevelEvent.elephantEventType = ElephantEvent.LevelStarted;
@@ -147,7 +144,7 @@ namespace FFStudio
 
 		private void LoadNewLevel()
 		{
-			tapInputListener.response = ExtensionMethods.EmptyMethod;
+			tapInputListener.response = Extensions.EmptyMethod;
 
 			var sequence = DOTween.Sequence();
 
@@ -158,7 +155,7 @@ namespace FFStudio
 
 		private void Resetlevel()
 		{
-			tapInputListener.response = ExtensionMethods.EmptyMethod;
+			tapInputListener.response = Extensions.EmptyMethod;
 
 			var sequence = DOTween.Sequence();
 
