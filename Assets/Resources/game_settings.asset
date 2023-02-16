@@ -42,7 +42,7 @@ MonoBehaviour:
   trajectory_crosshair_offset: -0.45
   trajectory_layer: 29
   camera_follow_speed_depth: 2.8
-  maxLevelCount: 35
+  maxLevelCount: 24
   minLevelCount: 1
   levelDatas:
   - {fileID: 11400000, guid: 582207d256746cd4ca60f5e0f9343754, type: 2}
