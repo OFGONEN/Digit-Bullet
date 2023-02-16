@@ -69,17 +69,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6499bf3a203410a42be50594b9c6efd6, type: 2}
   - {fileID: 11400000, guid: 12af8bdff43757341bdda47344161732, type: 2}
   - {fileID: 11400000, guid: 23adc94544a298841958b92639d9c8b5, type: 2}
-  - {fileID: 11400000, guid: 37ec59f2224eeca42baeae23c878e5c6, type: 2}
-  - {fileID: 11400000, guid: 535e2b1f9188c40468fee29bfa82bcdb, type: 2}
-  - {fileID: 11400000, guid: ef52f2f47e8da384ab34effcc66ae1e2, type: 2}
-  - {fileID: 11400000, guid: 2d37eef166dec0b4aaf0231e765ebe4d, type: 2}
-  - {fileID: 11400000, guid: 5488cf68fe9413949b5b89e42434e091, type: 2}
-  - {fileID: 11400000, guid: 14105dbd3ff752240bb7a06998cdc040, type: 2}
-  - {fileID: 11400000, guid: 9f0f05b523e95954e8e2a567214cc30b, type: 2}
-  - {fileID: 11400000, guid: abac3e9228b4951408c58f946670e5d0, type: 2}
-  - {fileID: 11400000, guid: dde7a983a48e40c49a675849e97b895c, type: 2}
-  - {fileID: 11400000, guid: 5bfce4ed320fc164d8c665c1aac98231, type: 2}
-  - {fileID: 11400000, guid: f81178ec0f0dc604c942b8ec53a3a8a1, type: 2}
   useRemoteConfig_GameSettings: 0
   useRemoteConfig_Components: 0
   ui_Entity_Move_TweenDuration: 0.5
