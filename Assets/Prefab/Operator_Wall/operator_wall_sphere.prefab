@@ -309,6 +309,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6416434474131690133}
     m_Modifications:
+    - target: {fileID: 4366520041647830059, guid: 5605f006cc20364428659377c7a12435, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f0d90b8c2f3836e4b9cf097f23eca386, type: 2}
+    - target: {fileID: 5663681570821619094, guid: 5605f006cc20364428659377c7a12435, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6579bfc6511b7434b83a6c089c38ac06, type: 2}
     - target: {fileID: 7528416822818535023, guid: 5605f006cc20364428659377c7a12435, type: 3}
       propertyPath: m_Name
       value: gfx_operator_sphere

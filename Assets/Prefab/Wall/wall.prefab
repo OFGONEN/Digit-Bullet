@@ -242,9 +242,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6416434474131690133}
     m_Modifications:
+    - target: {fileID: 4077975725668817380, guid: 4429d973a65337b4a8f8125ad692ecc7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7528416822818535023, guid: 4429d973a65337b4a8f8125ad692ecc7, type: 3}
       propertyPath: m_Name
       value: gfx_operator_wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528416822818535023, guid: 4429d973a65337b4a8f8125ad692ecc7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8027779697415656706, guid: 4429d973a65337b4a8f8125ad692ecc7, type: 3}
       propertyPath: m_RootOrder
