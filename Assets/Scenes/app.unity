@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12844527, g: 0.742276, b: 1.0038952, a: 1}
+  m_IndirectSpecularColor: {r: 0.17401078, g: 0.75077087, b: 1.0098964, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -544,6 +544,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 124199663173045015, guid: 797da1a9d36c74949965f5c3a417702f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 124199665187945362, guid: 797da1a9d36c74949965f5c3a417702f, type: 3}
       propertyPath: m_Name
       value: manager_ui
@@ -630,6 +634,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 124199665187945366, guid: 797da1a9d36c74949965f5c3a417702f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1833561204869198398, guid: 797da1a9d36c74949965f5c3a417702f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2196552038627701643, guid: 797da1a9d36c74949965f5c3a417702f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899390542204069127, guid: 797da1a9d36c74949965f5c3a417702f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899390542949180342, guid: 797da1a9d36c74949965f5c3a417702f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420964396324400481, guid: 797da1a9d36c74949965f5c3a417702f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5414414559566158904, guid: 797da1a9d36c74949965f5c3a417702f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7318731673257237698, guid: 797da1a9d36c74949965f5c3a417702f, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
