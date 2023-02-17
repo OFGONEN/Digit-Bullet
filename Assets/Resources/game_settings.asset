@@ -83,6 +83,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 82cb00aa0b3b2a746af029fa1529647e, type: 2}
   - {fileID: 11400000, guid: 7f5de10e02d750d4086d9a67865f3bbe, type: 2}
   - {fileID: 11400000, guid: 630e64470510726439a372e9004e36ac, type: 2}
+  - {fileID: 11400000, guid: 0105b2777d159aa46af9f5eacec75c8f, type: 2}
+  - {fileID: 11400000, guid: bb82322ea028ba445b54acdf59a81723, type: 2}
+  - {fileID: 11400000, guid: 7d733f490ca634d4391a95f87a3e87f0, type: 2}
+  - {fileID: 11400000, guid: 0513046441c26ad46b28f0430ce6607b, type: 2}
+  - {fileID: 11400000, guid: c5bceb544220ead4a8de59a8ea589e62, type: 2}
+  - {fileID: 11400000, guid: 888ea51d0411fdb448b2148c35640c8a, type: 2}
+  - {fileID: 11400000, guid: 41a1fd51b6544a945833888cfaf2b53e, type: 2}
+  - {fileID: 11400000, guid: ec564982ce7e0d245b155c07026e4375, type: 2}
   useRemoteConfig_GameSettings: 0
   useRemoteConfig_Components: 0
   ui_Entity_Move_TweenDuration: 0.5
