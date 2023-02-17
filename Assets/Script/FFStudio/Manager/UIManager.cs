@@ -87,7 +87,7 @@ namespace FFStudio
 			sequence.Append( foreGroundImage.DOFade( 0.0f, GameSettings.Instance.ui_Entity_Fade_TweenDuration ) )
 					// .Append( tween ) // TODO: UIElements tween.
 					.Append( level_information_text_Scale.DoScale_Start( GameSettings.Instance.ui_Entity_Scale_TweenDuration ) )
-					.AppendCallback( () => tapInputListener.response = StartLevel );
+					.AppendCallback( StartLevel );
         }
 
         private void LevelCompleteResponse()
@@ -129,8 +129,9 @@ namespace FFStudio
 		{
 			foreGroundImage.DOFade( 0, GameSettings.Instance.ui_Entity_Fade_TweenDuration );
 
-			level_information_text_Scale.DoScale_Target( Vector3.zero, GameSettings.Instance.ui_Entity_Scale_TweenDuration );
-			level_information_text_Scale.Subscribe_OnComplete( levelRevealedEvent.Raise );
+			levelRevealedEvent.Raise();
+			// level_information_text_Scale.DoScale_Target( Vector3.zero, GameSettings.Instance.ui_Entity_Scale_TweenDuration );
+			// level_information_text_Scale.Subscribe_OnComplete( levelRevealedEvent.Raise );
 
 			tutorialObjects.gameObject.SetActive( false );
 

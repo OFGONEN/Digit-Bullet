@@ -11,9 +11,19 @@ namespace FFStudio
 	[ CreateAssetMenu( fileName = "LevelData", menuName = "FF/Data/LevelData" ) ]
 	public class LevelData : ScriptableObject
     {
-	[ Title( "Setup" ) ]
+	  [ Title( "Setup" ) ]
 		[ ValueDropdown( "SceneList" ), LabelText( "Scene Index" ) ] public int scene_index;
         [ LabelText( "Override As Active Scene" ) ] public bool scene_overrideAsActiveScene;
+
+	  [ Title( "Level Releated" ) ]
+	  	[ LabelText( "Aim Trajectory Contact Point Count" ) ] public int trajectory_point_count;
+	  	[ LabelText( "Number Ricochet Count" ) ] public int number_ricochet_count;
+	  	[ LabelText( "Numbers To Shoot" ) ] public int[] number_array;
+	  	[ LabelText( "First Number's Spawn Offset" ) ] public Vector3 number_array_spawn_offset;
+	  	[ LabelText( "Number's offset in between" ) ] public Vector3 number_array_offset;
+	  	[ LabelText( "Number's Waiting Line Size" ) ] public int number_array_size;
+	  	[ LabelText( "Number Shoot Scale" ) ] public float number_scale; // Current Number to shoot
+	  	[ LabelText( "Number Shoot Waiting Line Scale" ) ] public float number_array_scale; // Number waiting to be shot
 
 #if UNITY_EDITOR
 		static IEnumerable SceneList()
@@ -26,6 +36,12 @@ namespace FFStudio
 				list.Add( Path.GetFileNameWithoutExtension( SceneUtility.GetScenePathByBuildIndex( i ) ) + $" ({i})", i );
 
 			return list;
+		}
+
+		private void OnValidate()
+		{
+			UnityEditor.EditorUtility.SetDirty( this );
+			number_ricochet_count = Mathf.Max( trajectory_point_count, number_ricochet_count );
 		}
 #endif
     }

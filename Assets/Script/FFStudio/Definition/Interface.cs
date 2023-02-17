@@ -1,4 +1,5 @@
 /* Created by and for usage of FF Studios (2022). */
+using UnityEngine;
 
 namespace FFStudio
 {
@@ -14,5 +15,16 @@ namespace FFStudio
 	{
 		string ConvertToJSON();
 		void OverriteFromJSON( string json );
+	}
+
+	public interface IActorNumber
+	{
+		void Add( int value );
+		void Substract( int value );
+		void Multiply( int value );
+		void Divide( int value );
+		void OnSafetyNetTrigger();
+		void DoPunchScale();
+		void DoShakeScale();
 	}
 }

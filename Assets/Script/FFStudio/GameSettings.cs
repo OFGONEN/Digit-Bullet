@@ -10,12 +10,39 @@ namespace FFStudio
     {
 #region Fields (Settings)
     // Info: You can use Title() attribute ONCE for every game-specific group of settings.
+    [ Title( "Actor Number" ) ]
+		[ LabelText( "Movement Speed" ) ] public float actor_movement_speed;
+		[ LabelText( "Movement Max Delta" ) ] public float actor_movement_delta_max;
+		[ LabelText( "Punch Scale" ) ] public PunchScaleTween actor_scale_punch;
+		[ LabelText( "Shake Scale" ) ] public ShakeScaleTween actor_scale_shake;
+
+    [ Title( "Actor Number Jump" ) ]
+		[ LabelText( "Jump Big Power" ) ] public float actor_jump_big_power;
+		[ LabelText( "Jump Big Duration" ) ] public float actor_jump_big_duration;
+		[ LabelText( "Jump Big Ease" ) ] public Ease actor_jump_big_ease;
+		[ LabelText( "Jump Small Power" ) ] public float actor_jump_small_power;
+		[ LabelText( "Jump Small Duration" ) ] public float actor_jump_small_duration;
+		[ LabelText( "Jump Small Ease" ) ] public Ease actor_jump_small_ease;
+
+    [ Title( "Number" ) ]
+		[ LabelText( "Number Positive Material" ) ] public Material number_material_positive;
+		[ LabelText( "Number Waiting Positive Material" ) ] public Material number_waiting_material_positive;
+		[ LabelText( "Number Operator Positive Material" ) ] public Material number_operator_material_positive;
+		[ LabelText( "TargetNumber Positive Material" ) ] public Material number_target_material;
+		[ LabelText( "Number and Operator Local Spawn Height" ) ] public float number_spawn_height;
+
+    [ Title( "Trajectory" ) ]
+		[ LabelText( "Trajectory Single Line Max Length" ) ] public float trajectory_line_length;
+		[ LabelText( "Trajectory Crosshair offset" ) ] public float trajectory_crosshair_offset;
+		[ LabelText( "Trajectory Raycast Layer" ), Layer() ] public int trajectory_layer;
     
     [ Title( "Camera" ) ]
         [ LabelText( "Follow Speed (Z)" ), SuffixLabel( "units/seconds" ), Min( 0 ) ] public float camera_follow_speed_depth = 2.8f;
     
     [ Title( "Project Setup", "These settings should not be edited by Level Designer(s).", TitleAlignments.Centered ) ]
         public int maxLevelCount;
+        public int minLevelCount = 1;
+        public LevelData[] levelDatas;
         
         // Info: 3 groups below (coming from template project) are foldout by design: They should remain hidden.
 		[ FoldoutGroup( "Remote Config" ) ] public bool useRemoteConfig_GameSettings;

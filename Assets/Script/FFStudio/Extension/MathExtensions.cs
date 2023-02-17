@@ -78,5 +78,26 @@ namespace FFStudio
 		{
 			return Mathf.Sqrt( hypotenuseEdge * hypotenuseEdge - edge1 * edge1 );
 		}
+
+		public static void ExtractDigits( this int value, List< int > list )
+		{
+			list.Clear();
+
+			int remainder;
+			int tempValue = Mathf.Abs( value );
+
+			while( tempValue > 0 )
+			{
+				remainder = tempValue % 10;
+				tempValue /= 10;
+
+				list.Insert( 0, remainder );
+			}
+		}
+
+		public static Vector2 ReturnNormalizedVector( this float angle )
+		{
+			return new Vector2( Mathf.Cos( Mathf.Deg2Rad * angle ), Mathf.Sin( Mathf.Deg2Rad * angle ) );
+		}
 	}
 }

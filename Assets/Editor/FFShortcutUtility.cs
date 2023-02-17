@@ -3,6 +3,7 @@
 using System.IO;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using FFStudio;
 using DG.Tweening;
 using System.Reflection;
@@ -31,6 +32,15 @@ namespace FFEditor
 			AssetDatabase.SaveAssets();
 
 			Debug.Log( "ScreenShot Taken: " + "ScreenShot_" + counter + ".png" );
+		}
+
+		[ MenuItem( "FFShortcut/TakeScreenShotScene Name #F11" ) ]
+		public static void TakeScreenShotSceneName()
+		{
+			ScreenCapture.CaptureScreenshot( "ScreenShot_" + EditorSceneManager.GetActiveScene().name + ".png" );
+			AssetDatabase.SaveAssets();
+
+			Debug.Log( "ScreenShot Taken: " + "ScreenShot_" + EditorSceneManager.GetActiveScene().name + ".png" );
 		}
 		
 		[ MenuItem( "FFShortcut/Select PlayerPrefsTracker _F7" ) ]
@@ -151,6 +161,44 @@ namespace FFEditor
 			var gameObject = Selection.activeGameObject.transform;
 			EditorUtility.SetDirty( gameObject );
 			gameObject.SetTransformData( currentTransformData );
+		}
+
+		[ MenuItem( "FFShortcut/Set Current Level Data #p" ) ]
+		static private void SetCurrentLevelData()
+		{
+			var levelName = Selection.activeObject.name;
+
+			for( var i = 0; i < GameSettings.Instance.levelDatas.Length; i++ )
+			{
+				if( GameSettings.Instance.levelDatas[ i ].name == levelName )
+				{
+					FFLogger.Log( levelName + " Index: " + ( i + 1 ) );
+					PlayerPrefs.SetInt( "Level", i + 1 );
+					PlayerPrefs.SetInt( "Consecutive Level", ( i + 1 ) );
+					return;
+				}
+			}
+
+			FFLogger.Log( "This level data is not in the game_settings" );
+		}
+
+		[ MenuItem( "FFShortcut/Log Level Data #l" ) ]
+		static private void LogLevelData()
+		{
+			var sceneName = Selection.activeObject.name;
+
+			for( var i = 0; i < GameSettings.Instance.levelDatas.Length; i++ )
+			{
+				if( Path.GetFileNameWithoutExtension( SceneUtility.GetScenePathByBuildIndex( GameSettings.Instance.levelDatas[ i ].scene_index ) ) == sceneName )
+				{
+					FFLogger.Log( "Scene: " + sceneName + " Level Data: " + GameSettings.Instance.levelDatas[ i ].name, GameSettings.Instance.levelDatas[ i ] );
+
+					Selection.SetActiveObjectWithContext( GameSettings.Instance.levelDatas[ i ], GameSettings.Instance.levelDatas[ i ] );
+					return;
+				}
+			}
+
+			FFLogger.Log( "This scene does not have level data in game_settings" );
 		}
 
 		[ MenuItem( "FFShortcut/Kill All Tweens %#t" ) ]

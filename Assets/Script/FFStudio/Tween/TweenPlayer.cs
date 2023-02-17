@@ -66,7 +66,7 @@ namespace FFStudio
         [ Button() ]
         public void Play()
         {
-			recycledTween.Recycle( tweenData.CreateTween() );
+			recycledTween.Recycle( tweenData.CreateTween(), tweenData.unityEvent_onCompleteEvent.Invoke );
 		}
 
         [ Button(), EnableIf( "IsPlaying" ) ]

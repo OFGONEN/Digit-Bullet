@@ -50,6 +50,20 @@ namespace FFStudio
 			effect.PlayParticle( spawnEvent );
 		}
 
+		public void SpawnParticleForward( ParticleSpawnForward spawnEvent )
+		{
+			ParticleEffectPool pool;
+
+			if( !dictionary_pool_pfx.TryGetValue( spawnEvent.particle_alias, out pool ) )
+			{
+				FFLogger.Log( "Particle:" + spawnEvent.particle_alias + " is missing!" );
+				return;
+			}
+
+			var effect = pool.GetEntity();
+			effect.PlayParticle( spawnEvent );
+		}
+
 		public void SpawnParticleRandom( ParticleSpawnEvent spawnEvent )
 		{
 			RandomParticlePool randomPool;

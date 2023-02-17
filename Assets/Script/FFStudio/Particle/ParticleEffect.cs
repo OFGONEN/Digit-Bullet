@@ -63,6 +63,21 @@ namespace FFStudio
 			particles.Play();
 		}
 
+		public void PlayParticle( ParticleSpawnForward particleEvent )
+		{
+			gameObject.SetActive( true );
+
+			transform.position   = particleEvent.particle_spawn_point;
+			transform.localScale = particle_start_size * particleEvent.particle_spawn_size;
+			transform.forward    = particleEvent.particle_spawn_forward;
+
+			if( particleEvent.particle_spawn_parent != null )
+			{
+				transform.SetParent( particleEvent.particle_spawn_parent );
+			}
+
+			particles.Play();
+		}
 
 		public void PlayParticle( Vector3 position, float scale, Transform parent = null )
 		{
