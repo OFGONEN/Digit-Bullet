@@ -107,4 +107,34 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/game_20_c.unity
     guid: 1547833a74b8cb743a9268a99293f066
+  - enabled: 1
+    path: Assets/Scenes/game_20_d.unity
+    guid: eb26eedb265ba6d4098f6b1de96b1771
+  - enabled: 1
+    path: Assets/Scenes/game_20_e.unity
+    guid: 54323788d6d6d6d49a4e368ad8a59076
+  - enabled: 1
+    path: Assets/Scenes/game_20_f.unity
+    guid: 22144fcd1f71ef545ac21ad22dcffd7e
+  - enabled: 1
+    path: Assets/Scenes/game_20_g.unity
+    guid: 17b20f4c3b729234fb1c78439d8b2090
+  - enabled: 1
+    path: Assets/Scenes/game_20_h.unity
+    guid: 6ad970fcd31cd634889b3bbaa2de1c9c
+  - enabled: 1
+    path: Assets/Scenes/game_20_i.unity
+    guid: d7837bd0bd21b0848a36ad00566bd1be
+  - enabled: 1
+    path: Assets/Scenes/game_20_j.unity
+    guid: 2b18d3d67897c8540986dca9370f272a
+  - enabled: 1
+    path: Assets/Scenes/game_20_k.unity
+    guid: f7a54dd2d3171da419e26335fda0a2e4
+  - enabled: 1
+    path: Assets/Scenes/game_20_l.unity
+    guid: 11ddc547808e352468a654e560d05b29
+  - enabled: 1
+    path: Assets/Scenes/game_20_m.unity
+    guid: 9624f8d980e20f04e985cd258bbc7f40
   m_configObjects: {}
