@@ -192,6 +192,8 @@ namespace FFEditor
 				if( Path.GetFileNameWithoutExtension( SceneUtility.GetScenePathByBuildIndex( GameSettings.Instance.levelDatas[ i ].scene_index ) ) == sceneName )
 				{
 					FFLogger.Log( "Scene: " + sceneName + " Level Data: " + GameSettings.Instance.levelDatas[ i ].name, GameSettings.Instance.levelDatas[ i ] );
+
+					Selection.SetActiveObjectWithContext( GameSettings.Instance.levelDatas[ i ], GameSettings.Instance.levelDatas[ i ] );
 					return;
 				}
 			}
