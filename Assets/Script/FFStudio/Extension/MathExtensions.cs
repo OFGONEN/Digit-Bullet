@@ -94,5 +94,10 @@ namespace FFStudio
 				list.Insert( 0, remainder );
 			}
 		}
+
+		public static Vector2 ReturnNormalizedVector( this float angle )
+		{
+			return new Vector2( Mathf.Cos( Mathf.Deg2Rad * angle ), Mathf.Sin( Mathf.Deg2Rad * angle ) );
+		}
 	}
 }
