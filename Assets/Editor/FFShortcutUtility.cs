@@ -153,6 +153,25 @@ namespace FFEditor
 			gameObject.SetTransformData( currentTransformData );
 		}
 
+		[ MenuItem( "FFShortcut/Set Current Level Data #p" ) ]
+		static private void SetCurrentLevelData()
+		{
+			var levelName = Selection.activeObject.name;
+
+			for( var i = 0; i < GameSettings.Instance.levelDatas.Length; i++ )
+			{
+				if( GameSettings.Instance.levelDatas[ i ].name == levelName )
+				{
+					FFLogger.Log( levelName + " Index: " + ( i + 1 ) );
+					PlayerPrefs.SetInt( "Level", i + 1 );
+					PlayerPrefs.SetInt( "Consecutive Level", ( i + 1 ) );
+					return;
+				}
+			}
+
+			FFLogger.Log( "This level data is not in the game_settings" );
+		}
+
 		[ MenuItem( "FFShortcut/Kill All Tweens %#t" ) ]
 		private static void KillAllTweens()
 		{
