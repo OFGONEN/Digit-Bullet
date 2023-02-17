@@ -42,7 +42,7 @@ MonoBehaviour:
   trajectory_crosshair_offset: -0.45
   trajectory_layer: 29
   camera_follow_speed_depth: 2.8
-  maxLevelCount: 28
+  maxLevelCount: 38
   minLevelCount: 1
   levelDatas:
   - {fileID: 11400000, guid: 582207d256746cd4ca60f5e0f9343754, type: 2}
@@ -73,6 +73,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: abac3e9228b4951408c58f946670e5d0, type: 2}
   - {fileID: 11400000, guid: ef52f2f47e8da384ab34effcc66ae1e2, type: 2}
   - {fileID: 11400000, guid: dde7a983a48e40c49a675849e97b895c, type: 2}
+  - {fileID: 11400000, guid: d05f4290f4e6e3342a5d7115261900f8, type: 2}
+  - {fileID: 11400000, guid: d58d73acec8494d4893ddf90eb202f3e, type: 2}
+  - {fileID: 11400000, guid: e85e00ca6c967ba4b8a6614898126467, type: 2}
+  - {fileID: 11400000, guid: 8488796dfc365a5459f8e89eada40619, type: 2}
+  - {fileID: 11400000, guid: 239d6717d1705a44e81ceaed342e360e, type: 2}
+  - {fileID: 11400000, guid: 55b1b812e30a2f345a5b27ddf2466ce2, type: 2}
+  - {fileID: 11400000, guid: 9649ec7f983106c448ae847f711c6e60, type: 2}
+  - {fileID: 11400000, guid: 82cb00aa0b3b2a746af029fa1529647e, type: 2}
+  - {fileID: 11400000, guid: 7f5de10e02d750d4086d9a67865f3bbe, type: 2}
+  - {fileID: 11400000, guid: 630e64470510726439a372e9004e36ac, type: 2}
   useRemoteConfig_GameSettings: 0
   useRemoteConfig_Components: 0
   ui_Entity_Move_TweenDuration: 0.5
