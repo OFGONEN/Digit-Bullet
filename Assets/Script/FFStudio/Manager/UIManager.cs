@@ -120,7 +120,9 @@ namespace FFStudio
 					.Append( level_information_text_Scale.DoScale_Start( GameSettings.Instance.ui_Entity_Scale_TweenDuration ) )
 					.AppendCallback( () => tapInputListener.response = Resetlevel );
 
-            elephantLevelEvent.level             = CurrentLevelData.Instance.currentLevel_Shown;
+			levelFailResponse.response = Extensions.EmptyMethod;
+
+			elephantLevelEvent.level             = CurrentLevelData.Instance.currentLevel_Shown;
             elephantLevelEvent.elephantEventType = ElephantEvent.LevelFailed;
             elephantLevelEvent.Raise();
         }
@@ -155,7 +157,8 @@ namespace FFStudio
 
 		private void Resetlevel()
 		{
-			tapInputListener.response = Extensions.EmptyMethod;
+			levelFailResponse.response = LevelFailResponse;
+			tapInputListener.response  = Extensions.EmptyMethod;
 
 			var sequence = DOTween.Sequence();
 
